@@ -1,0 +1,25 @@
+header.header-common
+  a.logo-header(href="#")
+    img.image-common(src=imgCommonPC+"logo_primary_01.png" alt="")
+  .navigation-header
+    .navigation-wrapper
+      ul.menu-header
+        li.menu-entry
+          a.entry-wrapper(class=page==="top"?"is-current":"" href=path+"/") 
+            span.entry-label Trang chủ
+        li.menu-entry
+          a.entry-wrapper(class=page==="event"?"is-current":"" href=path+"/event/")
+            span.entry-label Sự kiện
+        li.menu-entry
+          a.entry-wrapper(class=page==="activity"?"is-current":"" href=path+"/activity/") 
+            span.entry-label Hoạt động
+        li.menu-entry
+          a.entry-wrapper(href=path+"/") 
+            span.entry-label Hướng dẫn
+        li.menu-entry
+          a.entry-wrapper(href=path+"/") 
+            span.entry-label Đăng ký
+      a.button-header-login(href=path+"/") 
+        .button-wrapper
+          span.button-label ĐĂNG NHẬP
+  span.button-header-burger.sp.js-click

@@ -1,0 +1,294 @@
+@charset "utf-8";
+@use "../_base/base"as *;
+
+.header-common {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+
+  @include desktop {
+    height: .89rem;
+    background-color: #fff;
+  }
+}
+
+.logo-header {
+  width: 1.1rem;
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  
+  @include desktop {
+    left: .28rem;
+  }
+
+  @include mobile {
+    left: 0;
+  }
+}
+
+.navigation-header {
+  z-index: 0;
+
+  @include desktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .navigation-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @include mobile {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    &::before {
+      background-color: rgba(0,0,0,0.7);
+      z-index: 0;
+    }
+
+    &::after {
+      background: url(../resources/images/common/sp/background_menu_01.svg) 50% 50% / 100% 100% no-repeat;
+      z-index: 1;
+    }
+
+    html:not(.is-state-resize) & {
+      transition: opacity 0.5s ease;
+    }
+
+    html:has(.button-header-burger.is-click-active) & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .navigation-wrapper {
+      height: 100%;
+      padding: 1.06rem 0.4rem;
+      overflow-y: auto;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+.menu-header {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  .entry-wrapper {
+    display: block;
+    position: relative;
+  }
+
+  .entry-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .entry-wrapper.is-current {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  @include desktop {
+    gap: .42rem;
+    font-weight: 700;
+    font-size: .25rem;
+    line-height: calc(31 / 25);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .entry-wrapper {
+      html:not(.is-state-resize) & {
+        transition: color 0.5s ease;
+      }
+    }
+
+    .entry-wrapper::after {
+      height: 0.07rem;
+      background-color: #efa009;
+      top: calc(100% + 0.05rem);
+      border-radius: 99999px 99999px 0 0;
+    }
+
+    .entry-wrapper:hover {
+      color: #efa009;
+    }
+
+    .entry-wrapper.is-current {
+      color: #efa009;
+    }
+  }
+
+  @include mobile {
+    padding: 0 .45rem;
+    flex-direction: column;
+    gap: .28rem;
+    font-family: "Bangers", sans-serif;
+    font-weight: 400;
+    font-size: .36rem;
+    line-height: calc(38 / 36);
+    align-items: flex-end;
+    color: #fff;
+    letter-spacing: 0.2em;
+
+    .entry-wrapper::after {
+      height: 0.1rem;
+      background: url(../resources/images/common/sp/background_radial_01.png) 50% 50% / 100% 100% no-repeat;
+      top: 100%;
+      left: .22rem;
+      right: -.25rem;
+    }
+  }
+}
+
+.button-header-login {
+  padding: 0.05rem;
+  background: url(../resources/images/common/mask_radial_01.png) 50% 50% / 100% 100% no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  font-family: "Oxanium", sans-serif;
+  font-size: 0.18rem;
+  font-weight: 600;
+  line-height: calc(23 / 18);
+  color: #000;
+  clip-path: polygon(calc(.18rem) 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0% calc(.18rem));
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: 0;
+    clip-path: polygon(calc(.18rem) 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0% calc(.18rem));
+  }
+  
+  .button-wrapper {
+    flex: 1 1 0;
+    background: url(../resources/images/common/mask_radial_01.png) 50% 50% / 100% 100% no-repeat;
+    position: relative;
+    z-index: 1;
+    clip-path: polygon(calc(.15rem) 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0% calc(.15rem));
+
+    &::before {
+      content: "";
+      background: url(../resources/images/common/mask_radial_02.png) 50% 50% / 100% 100% no-repeat;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      clip-path: polygon(calc(.15rem) 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0% calc(.15rem));
+    }
+  }
+
+  .button-label {
+    position: relative;
+    top: 0.02rem;
+    z-index: 1;
+  }
+
+  @include desktop {
+    width: 1.84rem;
+    position: absolute;
+    top: 0.17rem;
+    right: 0.15rem;
+
+    &::before {
+      background-color: #666;
+    }
+
+    .button-wrapper {
+      padding: 0.06rem;
+    }
+  }
+
+  @include mobile {
+    width: calc(100% - 1.48rem);
+    margin: 1.75rem auto 0;
+    
+    &::before {
+      background-color: #000;
+    }
+
+    .button-wrapper {
+      padding: 0.09rem;
+    }
+  }
+}
+
+.button-header-burger {
+  @include mobile {
+    width: .45rem;
+    height: .28rem;
+    background: url(../resources/images/common/button_burger_01_background.svg) 50% 50% / 100% auto no-repeat;
+    display: block;
+    position: fixed;
+    top: 0.1rem;
+    right: 0.04rem;
+    z-index: 2;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      background: 50% 50% / 100% auto no-repeat;
+      position: absolute;
+      inset: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    &::before {
+      background-image: url(../resources/images/common/button_burger_01_close.svg);
+      opacity: 0;
+    }
+
+    &::after {
+      background-image: url(../resources/images/common/button_burger_01_open.svg);
+      opacity: 1;
+    }
+  }
+}
+
+.button-header-burger.is-click-active {
+  @include mobile {
+    &::before {
+      opacity: 1;
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}

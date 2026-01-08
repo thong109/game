@@ -1,0 +1,143 @@
+@charset "utf-8";
+@use "../../_base/base"as *;
+
+.pagination-common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #4a4a4a;
+  text-align: center;
+
+  .pagination-wrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow-wrapper,
+  .entry-wrapper {
+    background-color: #f8f8f8;
+    border: 1px solid #bab5b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background 0.5s ease, color 0.5s ease;
+
+    &:not(span):hover,
+    &.is-current {
+      background-color: #efa009;
+      color: #2a2727;
+    }
+  }
+
+  .arrow-wrapper::after {
+    content: "";
+    mask: 50% 50% / auto auto no-repeat;
+    background-color: #4a4a4a;
+    position: absolute;
+    inset: 0;
+    transition: background 0.5s ease;
+  }
+
+  .arrow-wrapper.is-first,
+  .arrow-wrapper.is-last {
+    &::after {
+      mask-image: url(../resources/images/common/icon_pagination_01.svg);
+    }
+  }
+
+  .arrow-wrapper.is-previous,
+  .arrow-wrapper.is-next {
+    &::after {
+      mask-image: url(../resources/images/common/icon_pagination_02.svg);
+    }
+  }
+
+  .arrow-wrapper.is-last,
+  .arrow-wrapper.is-next {
+    transform: scale(-1, 1);
+  }
+
+  .arrow-wrapper.is-disabled {
+    &::after {
+      opacity: 0.6;
+    }
+  }
+  
+  .dots-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include desktop {
+    margin-top: .49rem;
+    font-size: .3rem;
+    line-height: calc(38 / 30);
+    gap: .14rem;
+
+    .pagination-wrapper {
+      gap: .14rem;
+    }
+
+    .arrow-wrapper,
+    .entry-wrapper {
+      min-width: .54rem;
+      min-height: .54rem;
+      padding: 0.07rem .05rem;
+      border-radius: .14rem;
+    }
+
+    .arrow-wrapper.is-first,
+    .arrow-wrapper.is-last {
+      &::after {
+        mask-size: .53rem auto;
+      }
+    }
+
+    .arrow-wrapper.is-previous,
+    .arrow-wrapper.is-next {
+      &::after {
+        mask-size: .36rem auto;
+      }
+    }
+  }
+
+  @include mobile {
+    margin-top: .9rem;
+    font-size: .11rem;
+    line-height: calc(13 / 11);
+    gap: .05rem;
+
+    .pagination-wrapper {
+      gap: .05rem;
+    }
+
+    .arrow-wrapper,
+    .entry-wrapper {
+      min-width: .19rem;
+      min-height: .19rem;
+      padding: 0.02rem .03rem;
+      border-radius: .05rem;
+    }
+
+    .arrow-wrapper.is-first,
+    .arrow-wrapper.is-last {
+      &::after {
+        mask-size: .18rem auto;
+      }
+    }
+
+    .arrow-wrapper.is-previous,
+    .arrow-wrapper.is-next {
+      &::after {
+        mask-size: .13rem auto;
+      }
+    }
+  }
+}

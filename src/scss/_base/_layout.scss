@@ -1,0 +1,231 @@
+@charset "utf-8";
+@use "variables"as *;
+@use "mixins"as *;
+
+/* Source Sans Pro */
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_200.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_200i.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_300.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_300i.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_400.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_400i.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_600.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_600i.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_700.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_700i.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_900.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../resources/fonts/sourcesanspro_900i.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+html {
+  line-height: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  @include desktop {
+    overflow: auto scroll;
+    font-size: 625%;
+  }
+
+  @include laptop {
+    font-size: calc(100dvw / 14.4);
+  }
+
+  @include mobile {
+    @include scroll-hidden;
+
+    min-height: 100vh;
+    font-size: calc(100dvw / 4.4);
+  }
+}
+
+body {
+  background-color: #fff;
+  color: $color-default;
+  font-family: $font-default;
+  font-size: $fontsize-default;
+  font-weight: $fontweight-default;
+  line-height: $lineheight-default;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  html.is-frozen-windows & {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+* {
+  overflow-anchor: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-normal);
+}
+
+a:not([class]) {
+  transition: text-decoration 0.3s ease;
+  text-decoration: underline;
+  text-decoration-thickness: 0.01rem;
+  text-underline-offset: 0.04rem;
+
+  &:hover {
+    text-decoration-color: transparent;
+  }
+
+  html.is-touchable & {
+    &:hover {
+      text-decoration-color: inherit;
+    }
+  }
+}
+
+img,
+svg {
+  image-rendering: smooth;
+  shape-rendering: geometricprecision;
+}
+
+.hidden {
+  display: none;
+}
+
+.trans {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  html.is-touchable & {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.load {
+  transition: opacity 0.3s ease;
+  opacity: 0.001;
+
+  html.is-visible & {
+    opacity: 1;
+  }
+}
+
+.image-common {
+  display: block;
+  width: 100%;
+}
+
+.object-common {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include desktop {
+    width: calc(100% - 0.88rem);
+    max-width: $wrapper-width;
+  }
+
+  @include mobile {
+    width: calc(100% - 0.2rem);
+  }
+}
+
+.sp {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.pc {
+  @include mobile {
+    display: none !important;
+  }
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+@use "../../_base/base"as *;
+
+.icon-common-views {
+  max-width: 35%;
+  background: #efa009 url(../resources/images/common/icon_views_01.svg) 0% 50% / auto auto no-repeat;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #121212;
+
+  @include desktop {
+    background-size: .16rem auto;
+    background-position: calc(0% + 0.17rem) 50%;
+    padding: 0.09rem 0.19rem 0.09rem 0.44rem;
+    border-radius: 0.05rem;
+    font-size: 0.25rem;
+    line-height: calc(31 / 25);
+  }
+
+  @include mobile {
+    background-size: .06rem auto;
+    background-position: calc(0% + 0.04rem) 50%;
+    padding: 0.03rem 0.07rem 0.03rem 0.13rem;
+    border-radius: 0.02rem;
+    font-size: 0.08rem;
+    line-height: calc(10 / 8);
+  }
+}

@@ -1,0 +1,74 @@
+block vars
+  - var classPage = ''
+  - var metaTitle = ''
+  - var path = ''
+  - var page = ''
+
+mixin filtersCommonNews()
+  .filters-common-news
+    ul.filters-wrapper
+      li.filters-entry
+        a.entry-wrapper.is-active(href="#") Tất cả
+      li.filters-entry
+        a.entry-wrapper(href="#") Mới nhất
+      li.filters-entry
+        a.entry-wrapper(href="#") Cũ nhất
+    .filters-extra
+      .input-common-search
+        input(type="text" placeholder="Tìm kiếm")
+        button(type="submit")
+
+mixin listCommonNews(data)
+  ul.list-common-news
+    each item in data
+      li.list-item
+        a.item-wrapper(href=item.url)
+          .item-thumbnail
+            figure.thumbnail-wrapper
+              img.object-common(src=item.thumbnail.src alt=item.thumbnail.alt)
+          .item-information
+            span.information-title!=item.title
+            .information-detail
+              p!=item.description
+            .information-properties
+              time.properties-date(datetime=item.date.format)!=item.date.value
+              .icon-common-views
+                span.icon-wrapper!=item.views
+
+mixin paginationCommon()
+  .pagination-common
+    .pagination-arrow
+      a.arrow-wrapper.is-first(href="#")
+    .pagination-arrow
+      a.arrow-wrapper.is-previous(href="#")
+    ol.pagination-wrapper
+      li.pagination-entry
+        a.entry-wrapper(href="#") 1
+      li.pagination-entry
+        a.entry-wrapper(href="#") 2
+      li.pagination-entry
+        a.entry-wrapper(href="#") 3
+      li.pagination-dots
+        span.dots-wrapper ...
+      li.pagination-entry
+        span.entry-wrapper.is-current 99
+    .pagination-arrow
+      span.arrow-wrapper.is-next.is-disabled
+    .pagination-arrow
+      span.arrow-wrapper.is-last.is-disabled
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{metaTitle}
+    link(rel="stylesheet" href=path+"/css/styles.css")
+  body
+    include ../_parts/_header.pug
+    main.main-common
+      block content
+    include ../_parts/_footer.pug
+    script(src=path+"/js/scripts.js") 
+

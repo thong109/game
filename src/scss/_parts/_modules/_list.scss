@@ -1,0 +1,130 @@
+@charset "utf-8";
+@use "../../_base/base"as *;
+
+.list-common-news {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  .item-wrapper {
+    display: flex;
+  }
+
+  .item-thumbnail {
+    flex: 0 0 auto;
+  }
+
+  .thumbnail-wrapper {
+    position: relative;
+    padding-top: calc(224 / 399 * 100%);
+
+    .object-common {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .item-information {
+    flex: 1 1 0;
+  }
+
+  .information-title {
+    margin: 0;
+    display: block;
+    font-weight: 700;
+    color: #efa009;
+    @include text-ellipse(2);
+  }
+
+  .information-detail {
+    font-weight: 600;
+    color: #4a4a4a;
+    @include text-ellipse(3);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .information-properties {
+    gap: .2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .properties-date {
+    display: block;
+    font-weight: 600;
+    color: #b4b4b4;
+  }
+
+  @include desktop {
+    padding: 0 .33rem 0 .19rem;
+    gap: .26rem;
+
+    .item-wrapper {
+      gap: .5rem;
+    }
+
+    .item-thumbnail {
+      width: 3.99rem;
+    }
+
+    .information-title {
+      margin: 0.05rem 0 0.12rem;
+      font-size: .36rem;
+      line-height: calc(45 / 36);
+    }
+
+    .information-detail {
+      padding-right: 1.13rem;
+      font-size: .25rem;
+      line-height: calc(31 / 25);
+    }
+
+    .information-properties {
+      margin-top: 0.19rem;
+    }
+
+    .properties-date {
+      font-size: .25rem;
+      line-height: calc(31 / 25);
+    }
+  }
+
+  @include mobile {
+    gap: .15rem;
+
+    .item-wrapper {
+      gap: .11rem;
+    }
+
+    .item-thumbnail {
+      width: 1.41rem;
+    }
+
+    .information-title {
+      margin-bottom: .01rem;
+      font-size: .14rem;
+      line-height: calc(18 / 14);
+    }
+
+    .information-detail {
+      padding-right: .37rem;
+      font-size: .12rem;
+      line-height: calc(15 / 12);
+    }
+
+    .information-properties {
+      margin-top: 0;
+    }
+
+    .properties-date {
+      font-size: .1rem;
+      line-height: calc(13 / 10);
+    }
+  }
+}
