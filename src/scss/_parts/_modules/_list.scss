@@ -48,19 +48,6 @@
     }
   }
 
-  .information-properties {
-    gap: .2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .properties-date {
-    display: block;
-    font-weight: 600;
-    color: #b4b4b4;
-  }
-
   @include desktop {
     padding: 0 .33rem 0 .19rem;
     gap: .26rem;
@@ -85,13 +72,8 @@
       line-height: calc(31 / 25);
     }
 
-    .information-properties {
+    .properties-common-information {
       margin-top: 0.19rem;
-    }
-
-    .properties-date {
-      font-size: .25rem;
-      line-height: calc(31 / 25);
     }
   }
 
@@ -118,13 +100,8 @@
       line-height: calc(15 / 12);
     }
 
-    .information-properties {
+    .properties-common-information {
       margin-top: 0;
-    }
-
-    .properties-date {
-      font-size: .1rem;
-      line-height: calc(13 / 10);
     }
   }
 }

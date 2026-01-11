@@ -1,0 +1,31 @@
+@charset "utf-8";
+@use "../../_base/base"as *;
+
+.properties-common-information {
+  gap: .2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .properties-date {
+    display: block;
+    font-weight: 600;
+    color: #b4b4b4;
+  }
+
+  @include desktop {
+    .properties-date {
+      font-size: .25rem;
+      line-height: calc(31 / 25);
+    }
+  }
+
+  @include mobile {
+    .properties-date {
+      font-size: .1rem;
+      line-height: calc(13 / 10);
+    }
+  }
+}
+
+

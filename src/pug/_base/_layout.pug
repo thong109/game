@@ -30,8 +30,9 @@ mixin listCommonNews(data)
             span.information-title!=item.title
             .information-detail
               p!=item.description
-            .information-properties
-              time.properties-date(datetime=item.date.format)!=item.date.value
+            .properties-common-information
+              time.properties-date(datetime=item.date.format)
+                span.date-wrapper!=item.date.value
               .icon-common-views
                 span.icon-wrapper!=item.views
 

@@ -1158,17 +1158,6 @@ html.is-visible .load {
 .list-common-news .information-detail p {
   margin: 0;
 }
-.list-common-news .information-properties {
-  gap: 0.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.list-common-news .properties-date {
-  display: block;
-  font-weight: 600;
-  color: #b4b4b4;
-}
 @media print, (min-width: 768px) {
   .list-common-news {
     padding: 0 0.33rem 0 0.19rem;
@@ -1190,12 +1179,8 @@ html.is-visible .load {
     font-size: 0.25rem;
     line-height: 1.24;
   }
-  .list-common-news .information-properties {
+  .list-common-news .properties-common-information {
     margin-top: 0.19rem;
-  }
-  .list-common-news .properties-date {
-    font-size: 0.25rem;
-    line-height: 1.24;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -1218,12 +1203,8 @@ html.is-visible .load {
     font-size: 0.12rem;
     line-height: 1.25;
   }
-  .list-common-news .information-properties {
+  .list-common-news .properties-common-information {
     margin-top: 0;
-  }
-  .list-common-news .properties-date {
-    font-size: 0.1rem;
-    line-height: 1.3;
   }
 }
 
@@ -1356,6 +1337,30 @@ html.is-visible .load {
 @media only screen and (max-width: 767.98px) {
   .pagination-common.is-nearfooter {
     margin-top: 0.9rem;
+  }
+}
+
+.properties-common-information {
+  gap: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.properties-common-information .properties-date {
+  display: block;
+  font-weight: 600;
+  color: #b4b4b4;
+}
+@media print, (min-width: 768px) {
+  .properties-common-information .properties-date {
+    font-size: 0.25rem;
+    line-height: 1.24;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .properties-common-information .properties-date {
+    font-size: 0.1rem;
+    line-height: 1.3;
   }
 }
 
