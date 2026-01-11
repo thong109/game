@@ -2,8 +2,6 @@
 @use "../_base/base"as *;
 
 .main-common {
-  min-height: 100dvh;
-
   @include desktop {
     padding-top: .89rem;
     background: #fff url(../resources/images/common/background_page_01.svg) calc(50% + 2.63rem) calc(0% - 2.98rem) / 21.31rem auto no-repeat;

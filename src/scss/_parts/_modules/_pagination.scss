@@ -109,7 +109,7 @@
   }
 
   @include mobile {
-    margin-top: .9rem;
+    margin-top: .1rem;
     font-size: .11rem;
     line-height: calc(13 / 11);
     gap: .05rem;
@@ -139,5 +139,16 @@
         mask-size: .13rem auto;
       }
     }
+  }
+}
+
+.pagination-common.is-nearfooter {
+  @include desktop {
+    padding-left: 4.37rem;
+    justify-content: flex-start;
+  }
+
+  @include mobile {
+    margin-top: .9rem;
   }
 }

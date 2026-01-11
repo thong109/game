@@ -188,10 +188,11 @@
 
   window.WebFontConfig = {
     custom: {
-      families: ["Inter:n6", "Sansation:n7", "Oxanium:n6", "Bangers:n4"],
+      families: ["Poppins:n4,n5", "Inter:n4,n6,n7", "Sansation:n4,n7", "Oxanium:n4,n6", "Bangers:n4"],
       urls: [
         "https://fonts.googleapis.com/css2" +
-        "?family=Inter:wght@400;600;700" +
+        "?family=Poppins:wght@400;500" +
+        "&family=Inter:wght@400;600;700" +
         "&family=Sansation:wght@400;700" +
         "&family=Oxanium:wght@400;600" +
         "&family=Bangers:wght@400" +

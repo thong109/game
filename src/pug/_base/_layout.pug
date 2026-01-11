@@ -5,7 +5,7 @@ block vars
   - var page = ''
 
 mixin filtersCommonNews()
-  .filters-common-news
+  .filters-common-news&attributes(attributes)
     ul.filters-wrapper
       li.filters-entry
         a.entry-wrapper.is-active(href="#") Tất cả
@@ -19,7 +19,7 @@ mixin filtersCommonNews()
         button(type="submit")
 
 mixin listCommonNews(data)
-  ul.list-common-news
+  ul.list-common-news&attributes(attributes)
     each item in data
       li.list-item
         a.item-wrapper(href=item.url)
@@ -36,7 +36,7 @@ mixin listCommonNews(data)
                 span.icon-wrapper!=item.views
 
 mixin paginationCommon()
-  .pagination-common
+  .pagination-common&attributes(attributes)
     .pagination-arrow
       a.arrow-wrapper.is-first(href="#")
     .pagination-arrow
@@ -49,7 +49,7 @@ mixin paginationCommon()
       li.pagination-entry
         a.entry-wrapper(href="#") 3
       li.pagination-dots
-        span.dots-wrapper ...
+        span.dots-wrapper . . .
       li.pagination-entry
         span.entry-wrapper.is-current 99
     .pagination-arrow
