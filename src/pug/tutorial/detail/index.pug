@@ -1,39 +1,39 @@
 extends ../../_base/_layout.pug
 block vars
-  - var metaTitle = 'Event Detail'
+  - var metaTitle = 'Tutorial Detail'
   - var path = '../..'
-  - var page = 'event'
-  - var imgPC = path + '/resources/images/event/'
-  - var imgSP = path + '/resources/images/event/sp/'
+  - var page = 'tutorial'
+  - var imgPC = path + '/resources/images/tutorial/'
+  - var imgSP = path + '/resources/images/tutorial/sp/'
   - var imgCommonPC = path + '/resources/images/common/'
   - var imgCommonSP = path + '/resources/images/common/sp/'
 
 block content
   +breadcrumbCommon([
-    {url: path+"/event/", title: "Sự kiện"},
-    {url: null, title: "Sự kiện nạp tân thủ"},
+    {url: path+"/tutorial/", title: "Hướng dẫn"},
+    {url: null, title: "Ghép ngọc rồng"},
   ])
   .c-single
     .u-wrapper
       .c-single__heading
-        h1.c-single__heading-title Sự kiện nạp tân thủ
+        h1.c-single__heading-title Ghép ngọc rồng
+        .c-single__heading-excerpt Ghép ngọc rồng là chức năng giúp người chơi đổi những Tinh thể rồng thanh những viên Ngọc rồng hoàn chỉnh
       .c-post
-        h2 I. Thời gian
-        p Từ 12h00 ngày 14/10/2025 đến hết 23h59 ngày 18/10/2025
-        h2 II. Nội dung
-        h3 1. Nạp thẻ tân thủ
-        p Trong thời gian diễn ra sự kiện người chơi tiến hành nạp game sẽ nhận được những phần quà hấp dẫn dưới đây
+        h2 1. Địa điểm 
+        p Người chơi đến gặp NPC Thướng Đế tại Thần Điện để thực hiện chức năng
+        h2 2. Cách thức quy đổi
         ul
-          li x1 cải trang Android số 17
-          li 50 triệu Zeni khoá
-          li Sách biến hình 5
-          li Pet mộc long
+          li Có 4 loại Ngọc rồng mà người chơi có thể ghép: 
+            ul
+              li Ngọc rồng trái đất:
+              li Ngọc rồng hắc ám
+              li Ngọc rồng đại ma giới
+              li Ngọc rồng siêu cấp
+          li Mỗi loại Ngọc rồng cần có 70 Tinh thể rồng và 1 Vé ghép ngọc rồng để tiến hành Ghép
+          li Khi ghép thành công người chơi nhận ngẫu nhiên Ngọc rồng từ 3 → 7 sao, riêng Ngọc rồng đại ma giới nhận 3 hoặc 2 sao
+          li Tỷ lệ nhận được Ngọc rồng cao cấp của mỗi loại Ngọc rồng là khác nhau
         figure
-          img(src=imgCommonPC+"placeholder_single_01.jpg" alt="Logo")
-        h3 2. Nạp thẻ cho thành viên cũ
-        p Trong thời gian diễn ra sự kiện người chơi tiến hành nạp ít nhất 50k sẽ được x2 phần thưởng và ngẫu nhiên nhận thêm 1 phần quà bí mật
-        figure
-          img(src=imgCommonPC+"placeholder_single_02.jpg" alt="Logo")
+          img(src=imgCommonPC+"placeholder_single_04.jpg" alt="Logo")
       .c-single-footing
         .c-properties-information.is-footing
           time.c-properties-information__date(datetime="2025-10-14")

@@ -1465,6 +1465,8 @@ html.is-touchable .u-effect-hover:hover {
 .c-post h5:last-child,
 .c-post h6:last-child,
 .c-post p:last-child,
+.c-post ul:last-child,
+.c-post ol:last-child,
 .c-post figure:last-child {
   margin-bottom: 0;
 }
@@ -1481,6 +1483,11 @@ html.is-touchable .u-effect-hover:hover {
 }
 .c-post ul {
   list-style-type: none;
+}
+.c-post ul ul li::before {
+  content: "+ ";
+  border-radius: none;
+  background: transparent;
 }
 .c-post ul li {
   position: relative;
@@ -1567,6 +1574,19 @@ html.is-touchable .u-effect-hover:hover {
   .c-post ul + figure,
   .c-post ol + figure {
     margin-top: 0.58rem;
+  }
+  .c-post ul ul,
+  .c-post ul ol,
+  .c-post ol ul,
+  .c-post ol ol {
+    padding-left: 0.25rem;
+  }
+  .c-post ul ul li::before,
+  .c-post ol ul li::before {
+    width: auto;
+    height: auto;
+    top: 0;
+    left: -0.18rem;
   }
   .c-post ul li::before {
     width: 0.05rem;
