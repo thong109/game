@@ -1,8 +1,6 @@
 @charset "utf-8";
-@use "variables"as *;
-@use "mixins"as *;
-
-/* Source Sans Pro */
+@use "variables" as *;
+@use "mixins" as *;
 
 @font-face {
   font-family: "Source Sans Pro";
@@ -126,24 +124,12 @@ body {
   }
 }
 
-* {
-  overflow-anchor: none;
-  scrollbar-width: none;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-normal);
-}
-
-a:not([class]) {
-  transition: text-decoration 0.3s ease;
+a:not([class]),
+.u-effect-underline {
+  transition: text-decoration 0.5s ease;
   text-decoration: underline;
-  text-decoration-thickness: 0.01rem;
-  text-underline-offset: 0.04rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.03em;
 
   &:hover {
     text-decoration-color: transparent;
@@ -162,12 +148,8 @@ svg {
   shape-rendering: geometricprecision;
 }
 
-.hidden {
-  display: none;
-}
-
-.trans {
-  transition: opacity 0.3s ease;
+.u-effect-hover {
+  transition: opacity 0.5s ease;
   opacity: 1;
   text-decoration: none;
   cursor: pointer;
@@ -183,28 +165,19 @@ svg {
   }
 }
 
-.load {
-  transition: opacity 0.3s ease;
-  opacity: 0.001;
-
-  html.is-visible & {
-    opacity: 1;
-  }
-}
-
-.image-common {
+.u-image {
   display: block;
   width: 100%;
 }
 
-.object-common {
+.u-object {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.wrapper {
+.u-wrapper {
   margin-right: auto;
   margin-left: auto;
 
@@ -218,14 +191,18 @@ svg {
   }
 }
 
-.sp {
+.u-display-sp {
   @include desktop {
     display: none !important;
   }
 }
 
-.pc {
+.u-display-pc {
   @include mobile {
     display: none !important;
   }
+}
+
+.u-display-hidden {
+  display: none;
 }

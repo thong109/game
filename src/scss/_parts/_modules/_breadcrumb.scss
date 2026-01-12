@@ -1,0 +1,17 @@
+@charset "utf-8";
+@use "../../_base/base" as *;
+
+.c-breadcrumb {
+  position: relative;
+  font-weight: 700;
+  color: #efa009;
+
+  .c-breadcrumb__entry-wrapper {
+    color: inherit;
+  }
+
+  @include desktop {
+    font-size: .38rem;
+    line-height: calc(45 / 38);
+  }
+}

@@ -1,25 +1,25 @@
-header.header-common
-  a.logo-header(href="#")
-    img.image-common(src=imgCommonPC+"logo_primary_01.png" alt="")
-  .navigation-header
-    .navigation-wrapper
-      ul.menu-header
-        li.menu-entry
-          a.entry-wrapper(class=page==="top"?"is-current":"" href=path+"/") 
-            span.entry-label Trang chủ
-        li.menu-entry
-          a.entry-wrapper(class=page==="event"?"is-current":"" href=path+"/event/")
-            span.entry-label Sự kiện
-        li.menu-entry
-          a.entry-wrapper(class=page==="activity"?"is-current":"" href=path+"/activity/") 
-            span.entry-label Hoạt động
-        li.menu-entry
-          a.entry-wrapper(class=page==="tutorial"?"is-current":"" href=path+"/tutorial/") 
-            span.entry-label Hướng dẫn
-        li.menu-entry
-          a.entry-wrapper(href=path+"/") 
-            span.entry-label Đăng ký
-      a.button-header-login(href=path+"/") 
-        .button-wrapper
-          span.button-label ĐĂNG NHẬP
-  span.button-header-burger.sp.js-click
+header.l-header
+  a.l-logo-header(href="#")
+    img.u-image(src=imgCommonPC+"logo_primary_01.png" alt="")
+  .l-navigation-header
+    .l-navigation-header__wrapper
+      ul.l-menu-header
+        li.l-menu-header__entry
+          a.l-menu-header__entry-wrapper(class=page==="top"?"is-current":"" href=path+"/") 
+            span.l-menu-header__entry-label Trang chủ
+        li.l-menu-header__entry
+          a.l-menu-header__entry-wrapper(class=page==="event"?"is-current":"" href=path+"/event/")
+            span.l-menu-header__entry-label Sự kiện
+        li.l-menu-header__entry
+          a.l-menu-header__entry-wrapper(class=page==="activity"?"is-current":"" href=path+"/activity/") 
+            span.l-menu-header__entry-label Hoạt động
+        li.l-menu-header__entry
+          a.l-menu-header__entry-wrapper(class=page==="tutorial"?"is-current":"" href=path+"/tutorial/") 
+            span.l-menu-header__entry-label Hướng dẫn
+        li.l-menu-header__entry
+          a.l-menu-header__entry-wrapper(href=path+"/") 
+            span.l-menu-header__entry-label Đăng ký
+      a.l-button-header-login(href=path+"/") 
+        .l-button-header-login__wrapper
+          span.l-button-header-login__label ĐĂNG NHẬP
+  span.l-button-header-burger.u-display-sp.js-click

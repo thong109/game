@@ -5,58 +5,71 @@ block vars
   - var page = ''
 
 mixin filtersCommonNews()
-  .filters-common-news&attributes(attributes)
-    ul.filters-wrapper
-      li.filters-entry
-        a.entry-wrapper.is-active(href="#") Tất cả
-      li.filters-entry
-        a.entry-wrapper(href="#") Mới nhất
-      li.filters-entry
-        a.entry-wrapper(href="#") Cũ nhất
-    .filters-extra
+  .c-filters-news&attributes(attributes)
+    ul.c-filters-news__wrapper
+      li.c-filters-news__entry
+        a.c-filters-news__entry-wrapper.is-active(href="#") Tất cả
+      li.c-filters-news__entry
+        a.c-filters-news__entry-wrapper(href="#") Mới nhất
+      li.c-filters-news__entry
+        a.c-filters-news__entry-wrapper(href="#") Cũ nhất
+    .c-filters-news__extra
       .input-common-search
         input(type="text" placeholder="Tìm kiếm")
         button(type="submit")
 
 mixin listCommonNews(data)
-  ul.list-common-news&attributes(attributes)
+  ul.c-list-news&attributes(attributes)
     each item in data
-      li.list-item
-        a.item-wrapper(href=item.url)
-          .item-thumbnail
+      li.c-list-news__item
+        a.c-list-news__item-wrapper(href=item.url)
+          .c-list-news__item-thumbnail
             figure.thumbnail-wrapper
-              img.object-common(src=item.thumbnail.src alt=item.thumbnail.alt)
-          .item-information
-            span.information-title!=item.title
-            .information-detail
+              img.u-object(src=item.thumbnail.src alt=item.thumbnail.alt)
+          .c-list-news__item-information
+            span.c-list-news__information-title!=item.title
+            .c-list-news__information-detail
               p!=item.description
-            .properties-common-information
-              time.properties-date(datetime=item.date.format)
-                span.date-wrapper!=item.date.value
-              .icon-common-views
-                span.icon-wrapper!=item.views
+            .c-properties-information
+              time.c-properties-information__date(datetime=item.date.format)
+                span.c-properties-information__date-wrapper!=item.date.value
+              .c-icon-views
+                span.c-icon-views__wrapper!=item.views
+
+mixin breadcrumbCommon(data)
+  nav.c-breadcrumb&attributes(attributes)
+    .u-wrapper
+      ul.c-breadcrumb__wrapper
+        li.c-breadcrumb__entry
+          a.c-breadcrumb__entry-wrapper(href=path+"/") Trang chủ
+        each entry in data
+          li.c-breadcrumb__entry
+            if(entry.url===null)
+              span.c-breadcrumb__entry-wrapper!=entry.title
+            else
+              a.c-breadcrumb__entry-wrapper.u-effect-underline(href=entry.url)!=entry.title
 
 mixin paginationCommon()
-  .pagination-common&attributes(attributes)
-    .pagination-arrow
-      a.arrow-wrapper.is-first(href="#")
-    .pagination-arrow
-      a.arrow-wrapper.is-previous(href="#")
-    ol.pagination-wrapper
-      li.pagination-entry
-        a.entry-wrapper(href="#") 1
-      li.pagination-entry
-        a.entry-wrapper(href="#") 2
-      li.pagination-entry
-        a.entry-wrapper(href="#") 3
-      li.pagination-dots
-        span.dots-wrapper . . .
-      li.pagination-entry
-        span.entry-wrapper.is-current 99
-    .pagination-arrow
-      span.arrow-wrapper.is-next.is-disabled
-    .pagination-arrow
-      span.arrow-wrapper.is-last.is-disabled
+  .c-pagination&attributes(attributes)
+    .c-pagination__arrow
+      a.c-pagination__arrow-wrapper.is-first(href="#")
+    .c-pagination__arrow
+      a.c-pagination__arrow-wrapper.is-previous(href="#")
+    ol.c-pagination__wrapper
+      li.c-pagination__entry
+        a.c-pagination__entry-wrapper(href="#") 1
+      li.c-pagination__entry
+        a.c-pagination__entry-wrapper(href="#") 2
+      li.c-pagination__entry
+        a.c-pagination__entry-wrapper(href="#") 3
+      li.c-pagination__dots
+        span.c-pagination__dots-wrapper . . .
+      li.c-pagination__entry
+        span.c-pagination__entry-wrapper.is-current 99
+    .c-pagination__arrow
+      span.c-pagination__arrow-wrapper.is-next.is-disabled
+    .c-pagination__arrow
+      span.c-pagination__arrow-wrapper.is-last.is-disabled
 
 doctype html
 html(lang="en")
