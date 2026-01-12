@@ -6,10 +6,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #4a4a4a;
 
   .c-properties-information__date {
     display: block;
     font-weight: 600;
+  }
+
+  .c-properties-information__date-label {
+    margin-right: .19rem;
+  }
+
+  .c-properties-information__date-wrapper {
     color: #b4b4b4;
   }
 
@@ -26,4 +34,8 @@
       line-height: calc(13 / 10);
     }
   }
+}
+
+.c-properties-information.is-footing {
+  justify-content: flex-end;
 }

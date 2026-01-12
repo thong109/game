@@ -6,12 +6,47 @@
   font-weight: 700;
   color: #efa009;
 
+  .c-breadcrumb__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .c-breadcrumb__entry:not(:last-child) {
+    &::after {
+      content: " / ";
+    }
+  }
+
   .c-breadcrumb__entry-wrapper {
+    display: inline-block;
+    position: relative;
     color: inherit;
   }
 
+  a.c-breadcrumb__entry-wrapper::after {
+    content: "";
+    position: absolute;
+    border-radius: 9999px 9999px 0 0;
+    background-color: #efa009;
+    top: 100%;
+    right: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  a.c-breadcrumb__entry-wrapper:hover {
+    &::after {
+      opacity: 0;
+    }
+  }
+
   @include desktop {
-    font-size: .38rem;
-    line-height: calc(45 / 38);
+    margin: 0.42rem 0 0.45rem;
+    font-size: .36rem;
+    line-height: calc(45 / 36);
+
+    .c-breadcrumb__entry-wrapper::after {
+      height: 0.03rem;
+    }
   }
 }

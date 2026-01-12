@@ -11,11 +11,12 @@ block vars
 block content
   .c-section-news
     .u-wrapper
+      h1.u-display-hidden Activity
       +filtersCommonNews()
       +listCommonNews([
         {
           url: path+"/activity/detail/",
-          title: "Sự kiện nạp tân thủ",
+          title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
           description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
           thumbnail: {src: imgCommonPC+"placeholder_activity_01.jpg", alt: ""},
           date: {value: "15/09/2025", format: "2025-09-15"},
@@ -23,7 +24,7 @@ block content
         },
         {
           url: path+"/activity/detail/",
-          title: "Sự kiện nạp tân thủ",
+          title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
           description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
           thumbnail: {src: imgCommonPC+"placeholder_activity_02.jpg", alt: ""},
           date: {value: "15/09/2025", format: "2025-09-15"},
@@ -31,7 +32,7 @@ block content
         },
         {
           url: path+"/activity/detail/",
-          title: "Sự kiện nạp tân thủ",
+          title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
           description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
           thumbnail: {src: imgCommonPC+"placeholder_activity_03.jpg", alt: ""},
           date: {value: "15/09/2025", format: "2025-09-15"},
@@ -39,7 +40,7 @@ block content
         },
         {
           url: path+"/activity/detail/",
-          title: "Sự kiện nạp tân thủ",
+          title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
           description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
           thumbnail: {src: imgCommonPC+"placeholder_activity_04.jpg", alt: ""},
           date: {value: "15/09/2025", format: "2025-09-15"},
@@ -47,7 +48,7 @@ block content
         },
         {
           url: path+"/activity/detail/",
-          title: "Sự kiện nạp tân thủ",
+          title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
           description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
           thumbnail: {src: imgCommonPC+"placeholder_activity_05.jpg", alt: ""},
           date: {value: "15/09/2025", format: "2025-09-15"},
@@ -55,7 +56,7 @@ block content
         },
         {
           url: path+"/activity/detail/",
-          title: "Sự kiện nạp tân thủ",
+          title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
           description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
           thumbnail: {src: imgCommonPC+"placeholder_activity_06.jpg", alt: ""},
           date: {value: "15/09/2025", format: "2025-09-15"},

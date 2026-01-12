@@ -88,9 +88,6 @@
 
 html {
   line-height: 1;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 
   @include desktop {
     overflow: auto scroll;

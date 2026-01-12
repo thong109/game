@@ -16,10 +16,16 @@
 
 .l-logo-header {
   width: 1.1rem;
+  margin: 0;
   display: block;
   position: fixed;
   top: 0;
   z-index: 1;
+
+  .l-logo-header__wrapper {
+    width: 100%;
+    display: block;
+  }
 
   @include desktop {
     left: .28rem;

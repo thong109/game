@@ -1,0 +1,200 @@
+@charset "utf-8";
+@use "../../_base/base" as *;
+
+.c-single {
+  color: #4a4a4a;
+
+  .c-single__heading-title {
+    margin: 0;
+    display: block;
+    font-weight: 700;
+    text-align: center;
+    color: #efa009;
+  }
+
+  .c-single__heading-excerpt {
+    font-weight: 700;
+  }
+
+  @include desktop {
+    padding-bottom: .43rem;
+
+    .c-single__heading {
+      margin-bottom: .34rem;
+    }
+
+    .c-single__heading:has(.c-single__heading-excerpt) {
+      margin-bottom: .13rem;
+
+      .c-single__heading-title {
+        margin-bottom: .35rem;
+      }
+    }
+
+    .c-single__heading-title {
+      font-size: .58rem;
+      line-height: calc(73 / 58);
+    }
+
+    .c-single__heading-excerpt {
+      font-size: .25rem;
+      line-height: calc(35 / 25);
+    }
+
+    .u-wrapper {
+      max-width: 12.3rem;
+    }
+
+    .c-single-footing {
+      margin-top: .55rem;
+    }
+  }
+}
+
+.c-post {
+  color: #4a4a4a;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      position: relative;
+    }
+
+    li:before {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background-color: #4a4a4a;
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  figure {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @include desktop {
+    font-size: .25rem;
+    line-height: calc(35 / 25);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: .1rem;
+
+      &+p {
+        margin-top: .22rem;
+      }
+
+      &+figure {
+        margin-top: .55rem;
+      }
+    }
+
+    h2 {
+      font-size: calc(40 / 25 * 1em);
+      line-height: calc(50 / 40);
+    }
+
+    h3 {
+      font-size: calc(32 / 25 * 1em);
+      line-height: calc(40 / 32);
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-size: calc(32 / 25 * 1em);
+      line-height: calc(40 / 32);
+    }
+
+    h4 {
+      font-size: calc(30 / 25 * 1em);
+    }
+
+    h5 {
+      font-size: calc(28 / 25 * 1em);
+    }
+
+    h6 {
+      font-size: calc(26 / 25 * 1em);
+    }
+
+    p {
+      margin-bottom: .35rem;
+
+      &+h1,
+      &+h2,
+      &+h3,
+      &+h4,
+      &+h5,
+      &+h6 {
+        margin-top: .35rem;
+      }
+
+      &+ul,
+      &+ol {
+        margin-top: -.35rem;
+      }
+    }
+
+    ul,
+    ol {
+      margin-bottom: 0.35rem;
+      padding-left: .42rem;
+
+      &+figure {
+        margin-top: .58rem;
+      }
+    }
+
+    ul {
+      li::before {
+        width: 0.05rem;
+        height: 0.05rem;
+        top: calc((35 - 5) / 2 * 0.01rem);
+        left: -0.25rem;
+      }
+    }
+
+    figure {
+      margin-bottom: .28rem;
+    }
+  }
+}

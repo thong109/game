@@ -14,7 +14,7 @@ mixin filtersCommonNews()
       li.c-filters-news__entry
         a.c-filters-news__entry-wrapper(href="#") Cũ nhất
     .c-filters-news__extra
-      .input-common-search
+      .c-input-search
         input(type="text" placeholder="Tìm kiếm")
         button(type="submit")
 
@@ -27,7 +27,7 @@ mixin listCommonNews(data)
             figure.thumbnail-wrapper
               img.u-object(src=item.thumbnail.src alt=item.thumbnail.alt)
           .c-list-news__item-information
-            span.c-list-news__information-title!=item.title
+            #{item.title.tag}.c-list-news__information-title!=item.title.content
             .c-list-news__information-detail
               p!=item.description
             .c-properties-information
@@ -47,7 +47,7 @@ mixin breadcrumbCommon(data)
             if(entry.url===null)
               span.c-breadcrumb__entry-wrapper!=entry.title
             else
-              a.c-breadcrumb__entry-wrapper.u-effect-underline(href=entry.url)!=entry.title
+              a.c-breadcrumb__entry-wrapper(href=entry.url)!=entry.title
 
 mixin paginationCommon()
   .c-pagination&attributes(attributes)
@@ -81,7 +81,7 @@ html(lang="en")
     link(rel="stylesheet" href=path+"/css/styles.css")
   body
     include ../_parts/_header.pug
-    main.main-common
+    main.l-main
       block content
     include ../_parts/_footer.pug
     script(src=path+"/js/scripts.js") 

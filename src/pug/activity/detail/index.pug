@@ -1,0 +1,45 @@
+extends ../../_base/_layout.pug
+block vars
+  - var metaTitle = 'Activity Detail'
+  - var path = '../..'
+  - var page = 'activity'
+  - var imgPC = path + '/resources/images/activity/'
+  - var imgSP = path + '/resources/images/activity/sp/'
+  - var imgCommonPC = path + '/resources/images/common/'
+  - var imgCommonSP = path + '/resources/images/common/sp/'
+
+block content
+  +breadcrumbCommon([
+    {url: path+"/activity/", title: "Hoạt động"},
+    {url: null, title: "Đại hội võ thuật"},
+  ])
+  .c-single
+    .u-wrapper
+      .c-single__heading
+        h1.c-single__heading-title Đại hội võ thuật
+        .c-single__heading-excerpt Đại hội võ thuật là giải đấu danh giá nhất trong thế giới võ thuật, nơi những chiến binh mạnh mẽ nhất từ khắp nơi tụ họp để tranh tài và khẳng định sức mạnh của bản thân. Mỗi trận đấu diễn ra trên võ đài trung lập, nơi chỉ có kẻ mạnh và bản lĩnh mới được vinh danh
+      .c-post
+        h2 1. Thời gian diễn ra
+        p Người chơi có thể đăng ký vào 2 khung giờ: 16h00 - 16h30 và 21h00 - 21h30 hàng ngày
+        h2 2. Địa điểm đăng ký
+        ul
+          li Đến Thành Phố Pumma gặp NPC Trọng Tài để tiến hành đăng ký
+          li Mỗi lần đăng ký sẽ tốn 1 lượng nhỏ Zeni khoá tuỳ vào cấp độ giải đấu mà người chơi đăng ký
+        h2 3. Cơ chế giải đấu
+        ul
+          li Giải đấu được diễn ra theo thể thức Solo 1 vs 1
+          li Khi kết thúc thời gian đăng ký người chơi sẽ được dịch chuyển vào võ đài để tiến hành thi đấu
+          li Mỗi cặp đấu diễn ra trong thời gian 1 phút. Trong thời gian đấy gây được nhiều sát thương hoặc hạ gục người khác sẽ giành chiến thắng
+          li Mỗi khi chiến thắng sẽ nhận Zeni khoá và điểm tích luỹ để đua top trên Bảng xếp hạng
+          li Giải đấu sẽ diễn ra đến khi tìm được nhà vô địch
+        figure
+          img(src=imgCommonPC+"placeholder_single_03.jpg" alt="Logo")
+        figure
+          img(src=imgCommonPC+"placeholder_single_03.jpg" alt="Logo")
+      .c-single-footing
+        .c-properties-information.is-footing
+          time.c-properties-information__date(datetime="2025-10-14")
+            span.c-properties-information__date-label Ngày đăng:
+            span.c-properties-information__date-wrapper 14/10/2025
+          .c-icon-views
+            span.c-icon-views__wrapper 9686
