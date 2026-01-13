@@ -179,6 +179,31 @@
     });
   };
 
+  const effectEyesFollow = () => {
+    const targets = document.querySelectorAll(".js-effect-eyesfollow");
+    if (!targets.length) return;
+
+    const radiusMax = 30;
+
+    document.addEventListener("mousemove", (event) => {
+      targets.forEach((target) => {
+        const rect = target.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+
+        const dx = event.clientX - cx;
+        const dy = event.clientY - cy;
+
+        const distance = Math.sqrt(dx * dx + dy * dy) || 1;
+        const ratio = Math.min(radiusMax / distance, 1);
+
+        const x = dx * ratio;
+        const y = dy * ratio;
+
+        target.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+  };
 
   window.WebFontConfig = {
     custom: {
@@ -210,4 +235,5 @@
   detectState();
   triggerClick();
   triggerTab();
+  effectEyesFollow();
 })();
