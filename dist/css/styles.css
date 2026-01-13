@@ -661,8 +661,8 @@ html.is-touchable .u-effect-hover:hover {
     background: url(../resources/images/common/button_burger_01_background.svg) 50% 50%/100% auto no-repeat;
     display: block;
     position: fixed;
-    top: 0.1rem;
-    right: 0.04rem;
+    top: 0.08rem;
+    right: 0.07rem;
     z-index: 2;
     cursor: pointer;
   }
@@ -1776,60 +1776,46 @@ html.is-touchable .u-effect-hover:hover {
     background: url(../resources/images/top/background_visual_01.svg) 50% calc(50% - 1.33rem)/20.15rem auto no-repeat, url(../resources/images/top/background_visual_02.jpg) 50% 0%/cover no-repeat;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  .p-visual-top {
+    height: 4.98rem;
+    background: url(../resources/images/top/sp/background_visual_01.svg) 50% 0%/100% auto no-repeat, url(../resources/images/top/sp/background_visual_02.jpg) 50% 0%/cover no-repeat;
+  }
+}
 
 .p-banner-top-visual {
   position: relative;
-}
-.p-banner-top-visual .p-banner-top-visual__wrapper {
-  position: absolute;
-  inset: 0;
-}
-.p-banner-top-visual .p-banner-top-visual__logo {
-  position: absolute;
-  z-index: 1;
-}
-.p-banner-top-visual .p-banner-top-visual__background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.p-banner-top-visual .p-banner-top-visual__background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: transform 0.5s linear;
-}
-.p-banner-top-visual .p-banner-top-visual__image-wrapper {
-  position: relative;
-  animation: floatTopVisual 12s infinite linear;
-}
-.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(1) .p-banner-top-visual__image-wrapper {
-  animation-delay: 0.1s;
-}
-.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(2) .p-banner-top-visual__image-wrapper {
-  animation-delay: -0.2s;
-}
-.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(3) .p-banner-top-visual__image-wrapper {
-  animation-delay: 0.3s;
-}
-.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(4) .p-banner-top-visual__image-wrapper {
-  animation-delay: -0.4s;
-}
-.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(5) .p-banner-top-visual__image-wrapper {
-  animation-delay: 0.5s;
-}
-.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(6) .p-banner-top-visual__image-wrapper {
-  animation-delay: -0.6s;
 }
 @media print, (min-width: 768px) {
   .p-banner-top-visual {
     padding-top: 67.3076923077%;
   }
+  .p-banner-top-visual .p-banner-top-visual__wrapper {
+    position: absolute;
+    inset: 0;
+  }
   .p-banner-top-visual .p-banner-top-visual__logo {
+    position: absolute;
+    z-index: 1;
     width: 59.3195266272%;
     top: 12.1978021978%;
     left: 19.4526627219%;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: transform 0.5s linear;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image .p-banner-top-visual__image-wrapper {
+    position: relative;
+    animation: floatTopVisual 12s infinite linear;
   }
   .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(1) {
     width: 3.7rem;
@@ -1837,11 +1823,17 @@ html.is-touchable .u-effect-hover:hover {
     left: -0.5917159763%;
     z-index: 3;
   }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(1) .p-banner-top-visual__image-wrapper {
+    animation-delay: 0.1s;
+  }
   .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(2) {
     width: 4.9rem;
     top: -1.0989010989%;
     left: -3.3284023669%;
     z-index: 2;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(2) .p-banner-top-visual__image-wrapper {
+    animation-delay: -0.2s;
   }
   .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(3) {
     width: 4.31rem;
@@ -1849,11 +1841,17 @@ html.is-touchable .u-effect-hover:hover {
     left: 21.5976331361%;
     z-index: 1;
   }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(3) .p-banner-top-visual__image-wrapper {
+    animation-delay: 0.3s;
+  }
   .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(4) {
     width: 5.36rem;
     top: 1.0989010989%;
     left: 68.7869822485%;
     z-index: 1;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(4) .p-banner-top-visual__image-wrapper {
+    animation-delay: -0.4s;
   }
   .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(5) {
     width: 4.38rem;
@@ -1861,10 +1859,21 @@ html.is-touchable .u-effect-hover:hover {
     left: 65.3106508876%;
     z-index: 2;
   }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(5) .p-banner-top-visual__image-wrapper {
+    animation-delay: 0.5s;
+  }
   .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(6) {
     width: 5.19rem;
     top: 55.7142857143%;
     left: 50.073964497%;
     z-index: 3;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(6) .p-banner-top-visual__image-wrapper {
+    animation-delay: -0.6s;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .p-banner-top-visual {
+    margin: 0.31rem -0.1rem 0;
   }
 }

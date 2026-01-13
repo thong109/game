@@ -55,83 +55,49 @@
     height: 11.08rem;
     background: url(../resources/images/top/background_visual_01.svg) 50% calc(50% - 1.33rem) / 20.15rem auto no-repeat, url(../resources/images/top/background_visual_02.jpg) 50% 0% / cover no-repeat;
   }
+
+  @include mobile {
+    height: 4.98rem;
+    background: url(../resources/images/top/sp/background_visual_01.svg) 50% 0% / 100% auto no-repeat, url(../resources/images/top/sp/background_visual_02.jpg) 50% 0% / cover no-repeat;
+  }
 }
 
 .p-banner-top-visual {
   position: relative;
 
-  .p-banner-top-visual__wrapper {
-    position: absolute;
-    inset: 0;
-  }
-
-  .p-banner-top-visual__logo {
-    position: absolute;
-    z-index: 1;
-  }
-
-  .p-banner-top-visual__background {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .p-banner-top-visual__background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    transition: transform 0.5s linear;
-  }
-
-  .p-banner-top-visual__image-wrapper {
-    position: relative;
-    animation: floatTopVisual 12s infinite linear;
-  }
-
-  .p-banner-top-visual__background-image:nth-child(1) {
-    .p-banner-top-visual__image-wrapper {
-      animation-delay: 0.1s;
-    }
-  }
-
-  .p-banner-top-visual__background-image:nth-child(2) {
-    .p-banner-top-visual__image-wrapper {
-      animation-delay: -0.2s;
-    }
-  }
-
-  .p-banner-top-visual__background-image:nth-child(3) {
-    .p-banner-top-visual__image-wrapper {
-      animation-delay: 0.3s;
-    }
-  }
-
-  .p-banner-top-visual__background-image:nth-child(4) {
-    .p-banner-top-visual__image-wrapper {
-      animation-delay: -0.4s;
-    }
-  }
-
-  .p-banner-top-visual__background-image:nth-child(5) {
-    .p-banner-top-visual__image-wrapper {
-      animation-delay: 0.5s;
-    }
-  }
-
-  .p-banner-top-visual__background-image:nth-child(6) {
-    .p-banner-top-visual__image-wrapper {
-      animation-delay: -0.6s;
-    }
-  }
-
   @include desktop {
     padding-top: calc(910 / 1352 * 100%);
 
+    .p-banner-top-visual__wrapper {
+      position: absolute;
+      inset: 0;
+    }
+
     .p-banner-top-visual__logo {
+      position: absolute;
+      z-index: 1;
       width: calc(802 / 1352 * 100%);
       top: calc(111 / 910 * 100%);
       left: calc(263 / 1352 * 100%);
+    }
+
+    .p-banner-top-visual__background {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .p-banner-top-visual__background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      transition: transform 0.5s linear;
+
+      .p-banner-top-visual__image-wrapper {
+        position: relative;
+        animation: floatTopVisual 12s infinite linear;
+      }
     }
 
     .p-banner-top-visual__background-image:nth-child(1) {
@@ -139,6 +105,10 @@
       top: calc(369 / 910 * 100%);
       left: calc(-8 / 1352 * 100%);
       z-index: 3;
+
+      .p-banner-top-visual__image-wrapper {
+        animation-delay: 0.1s;
+      }
     }
 
     .p-banner-top-visual__background-image:nth-child(2) {
@@ -146,6 +116,10 @@
       top: calc(-10 / 910 * 100%);
       left: calc(-45 / 1352 * 100%);
       z-index: 2;
+
+      .p-banner-top-visual__image-wrapper {
+        animation-delay: -0.2s;
+      }
     }
 
     .p-banner-top-visual__background-image:nth-child(3) {
@@ -153,6 +127,10 @@
       top: calc(58 / 910 * 100%);
       left: calc(292 / 1352 * 100%);
       z-index: 1;
+
+      .p-banner-top-visual__image-wrapper {
+        animation-delay: 0.3s;
+      }
     }
 
     .p-banner-top-visual__background-image:nth-child(4) {
@@ -160,6 +138,10 @@
       top: calc(10 / 910 * 100%);
       left: calc(930 / 1352 * 100%);
       z-index: 1;
+
+      .p-banner-top-visual__image-wrapper {
+        animation-delay: -0.4s;
+      }
     }
 
     .p-banner-top-visual__background-image:nth-child(5) {
@@ -167,6 +149,10 @@
       top: calc(99 / 910 * 100%);
       left: calc(883 / 1352 * 100%);
       z-index: 2;
+
+      .p-banner-top-visual__image-wrapper {
+        animation-delay: 0.5s;
+      }
     }
 
     .p-banner-top-visual__background-image:nth-child(6) {
@@ -174,6 +160,14 @@
       top: calc(507 / 910 * 100%);
       left: calc(677 / 1352 * 100%);
       z-index: 3;
+
+      .p-banner-top-visual__image-wrapper {
+        animation-delay: -0.6s;
+      }
     }
+  }
+
+  @include mobile {
+    margin: 0.31rem -0.1rem 0;
   }
 }
