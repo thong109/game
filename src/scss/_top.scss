@@ -66,6 +66,7 @@
   position: relative;
 
   @include desktop {
+    margin-bottom: -1.14rem;
     padding-top: calc(910 / 1352 * 100%);
 
     .p-banner-top-visual__wrapper {
@@ -169,5 +170,48 @@
 
   @include mobile {
     margin: 0.31rem -0.1rem 0;
+  }
+}
+
+.p-list-top-system {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+
+  .p-list-top-system__item {
+    width: 100%;
+  }
+
+  @include desktop {
+    max-width: 12.42rem;
+    gap: .42rem;
+
+  }
+}
+
+.p-button-top-system {
+  position: relative;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: #fff;
+
+  .p-button-top-system__wrapper {
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+  }
+
+  @include desktop {
+    .p-button-top-system__wrapper {
+      height: .78rem;
+      padding: 0 0 0;
+      clip-path: polygon(calc(.13rem) 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0% calc(.13rem));
+    }
+
+    .p-button-top-system__icon {
+      width: 0.5rem;
+      margin-right: 0;
+    }
   }
 }
