@@ -427,7 +427,7 @@ html.is-touchable .u-effect-hover:hover {
 }
 @media print, (min-width: 768px) {
   .l-header {
-    height: 0.89rem;
+    height: 0.86rem;
     background-color: #fff;
   }
 }
@@ -694,7 +694,7 @@ html.is-touchable .u-effect-hover:hover {
 
 @media print, (min-width: 768px) {
   .l-main {
-    padding-top: 0.89rem;
+    padding-top: 0.86rem;
     background: #fff url(../resources/images/common/background_page_01.svg) calc(50% + 2.63rem) calc(0% - 2.98rem)/21.31rem auto no-repeat;
   }
 }
@@ -1728,5 +1728,143 @@ html.is-touchable .u-effect-hover:hover {
   }
   .c-post figure {
     margin-bottom: 0.14rem;
+  }
+}
+
+@keyframes floatTopVisual {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(6px, -4px);
+  }
+  20% {
+    transform: translate(-5px, 3px);
+  }
+  30% {
+    transform: translate(8px, 2px);
+  }
+  40% {
+    transform: translate(-7px, -6px);
+  }
+  50% {
+    transform: translate(4px, 8px);
+  }
+  60% {
+    transform: translate(-3px, -5px);
+  }
+  70% {
+    transform: translate(7px, -2px);
+  }
+  80% {
+    transform: translate(-6px, 5px);
+  }
+  90% {
+    transform: translate(3px, -7px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.p-visual-top {
+  position: relative;
+  overflow: hidden;
+}
+@media print, (min-width: 768px) {
+  .p-visual-top {
+    height: 11.08rem;
+    background: url(../resources/images/top/background_visual_01.svg) 50% calc(50% - 1.33rem)/20.15rem auto no-repeat, url(../resources/images/top/background_visual_02.jpg) 50% 0%/cover no-repeat;
+  }
+}
+
+.p-banner-top-visual {
+  position: relative;
+}
+.p-banner-top-visual .p-banner-top-visual__wrapper {
+  position: absolute;
+  inset: 0;
+}
+.p-banner-top-visual .p-banner-top-visual__logo {
+  position: absolute;
+  z-index: 1;
+}
+.p-banner-top-visual .p-banner-top-visual__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.p-banner-top-visual .p-banner-top-visual__background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: transform 0.5s linear;
+}
+.p-banner-top-visual .p-banner-top-visual__image-wrapper {
+  position: relative;
+  animation: floatTopVisual 12s infinite linear;
+}
+.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(1) .p-banner-top-visual__image-wrapper {
+  animation-delay: 0.1s;
+}
+.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(2) .p-banner-top-visual__image-wrapper {
+  animation-delay: -0.2s;
+}
+.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(3) .p-banner-top-visual__image-wrapper {
+  animation-delay: 0.3s;
+}
+.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(4) .p-banner-top-visual__image-wrapper {
+  animation-delay: -0.4s;
+}
+.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(5) .p-banner-top-visual__image-wrapper {
+  animation-delay: 0.5s;
+}
+.p-banner-top-visual .p-banner-top-visual__background-image:nth-child(6) .p-banner-top-visual__image-wrapper {
+  animation-delay: -0.6s;
+}
+@media print, (min-width: 768px) {
+  .p-banner-top-visual {
+    padding-top: 67.3076923077%;
+  }
+  .p-banner-top-visual .p-banner-top-visual__logo {
+    width: 59.3195266272%;
+    top: 12.1978021978%;
+    left: 19.4526627219%;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(1) {
+    width: 3.7rem;
+    top: 40.5494505495%;
+    left: -0.5917159763%;
+    z-index: 3;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(2) {
+    width: 4.9rem;
+    top: -1.0989010989%;
+    left: -3.3284023669%;
+    z-index: 2;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(3) {
+    width: 4.31rem;
+    top: 6.3736263736%;
+    left: 21.5976331361%;
+    z-index: 1;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(4) {
+    width: 5.36rem;
+    top: 1.0989010989%;
+    left: 68.7869822485%;
+    z-index: 1;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(5) {
+    width: 4.38rem;
+    top: 10.8791208791%;
+    left: 65.3106508876%;
+    z-index: 2;
+  }
+  .p-banner-top-visual .p-banner-top-visual__background-image:nth-child(6) {
+    width: 5.19rem;
+    top: 55.7142857143%;
+    left: 50.073964497%;
+    z-index: 3;
   }
 }
