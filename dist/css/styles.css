@@ -720,6 +720,9 @@ html.is-touchable .u-effect-hover:hover {
   top: 0;
   z-index: 1;
 }
+html.is-page-top .l-footer-common::before {
+  display: none;
+}
 .l-footer-common .l-footer-common__wrapper {
   position: relative;
   pointer-events: auto;
@@ -735,7 +738,8 @@ html.is-touchable .u-effect-hover:hover {
     right: calc(50% - 2.42rem);
   }
   .l-footer-common .l-footer-common__wrapper {
-    background: #000 url(../resources/images/common/pattern_footer_01.svg) 0% 0%/auto auto repeat;
+    background: url(../resources/images/common/background_footer_01.png) 0% 0%/100% 100% repeat, url(../resources/images/common/pattern_footer_01.svg) 0% 0%/auto auto repeat;
+    background-color: #000;
     margin-top: 0.33rem;
     border-top: 0.03rem solid #efa009;
   }
@@ -754,7 +758,8 @@ html.is-touchable .u-effect-hover:hover {
     left: calc(50% - 1.95rem);
   }
   .l-footer-common .l-footer-common__wrapper {
-    background: #000 url(../resources/images/common/sp/pattern_footer_01.svg) 0% 0%/auto auto repeat;
+    background: url(../resources/images/common/sp/background_footer_01.png) 0% 0%/100% 100% repeat, url(../resources/images/common/sp/pattern_footer_01.svg) 0% 0%/auto auto repeat;
+    background-color: #000;
     margin-top: 0.13rem;
     border-top: 0.02rem solid #efa009;
   }

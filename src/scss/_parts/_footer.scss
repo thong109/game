@@ -16,6 +16,10 @@
     position: absolute;
     top: 0;
     z-index: 1;
+
+    html.is-page-top & {
+      display: none;
+    }
   }
 
   .l-footer-common__wrapper {
@@ -34,7 +38,8 @@
     }
 
     .l-footer-common__wrapper {
-      background: #000 url(../resources/images/common/pattern_footer_01.svg) 0% 0% / auto auto repeat;
+      background: url(../resources/images/common/background_footer_01.png) 0% 0% / 100% 100% repeat, url(../resources/images/common/pattern_footer_01.svg) 0% 0% / auto auto repeat;
+      background-color: #000;
       margin-top: .33rem;
       border-top: 0.03rem solid #efa009;
     }
@@ -55,7 +60,8 @@
     }
 
     .l-footer-common__wrapper {
-      background: #000 url(../resources/images/common/sp/pattern_footer_01.svg) 0% 0% / auto auto repeat;
+      background: url(../resources/images/common/sp/background_footer_01.png) 0% 0% / 100% 100% repeat, url(../resources/images/common/sp/pattern_footer_01.svg) 0% 0% / auto auto repeat;
+      background-color: #000;
       margin-top: .13rem;
       border-top: 0.02rem solid #efa009;
     }
