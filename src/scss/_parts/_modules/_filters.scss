@@ -19,6 +19,7 @@
     display: block;
     position: relative;
     transition: color 0.5s ease;
+    cursor: pointer;
   }
 
   .c-filters-news__entry-wrapper::after {
@@ -35,11 +36,11 @@
   }
 
   .c-filters-news__entry-wrapper:hover,
-  .c-filters-news__entry-wrapper.is-active {
+  .c-filters-news__entry-wrapper.is-tab-active {
     color: #3684da;
   }
 
-  .c-filters-news__entry-wrapper.is-active::after {
+  .c-filters-news__entry-wrapper.is-tab-active::after {
     opacity: 1;
   }
 

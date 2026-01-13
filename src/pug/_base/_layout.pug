@@ -4,15 +4,15 @@ block vars
   - var path = ''
   - var page = ''
 
-mixin filtersCommonNews()
+mixin filtersCommonNews(data)
   .c-filters-news&attributes(attributes)
     ul.c-filters-news__wrapper
       li.c-filters-news__entry
-        a.c-filters-news__entry-wrapper.is-active(href="#") Tất cả
+        span.c-filters-news__entry-wrapper.is-tab-active.js-tab__toggle(data-tab-id="filters-"+data.id) Tất cả
       li.c-filters-news__entry
-        a.c-filters-news__entry-wrapper(href="#") Mới nhất
+        span.c-filters-news__entry-wrapper.js-tab__toggle(data-tab-id="filters-"+data.id+" filters-"+data.id+"-newest") Mới nhất
       li.c-filters-news__entry
-        a.c-filters-news__entry-wrapper(href="#") Cũ nhất
+        span.c-filters-news__entry-wrapper.js-tab__toggle(data-tab-id="filters-"+data.id+" filters-"+data.id+"-oldest") Cũ nhất
     .c-filters-news__extra
       .c-input-search
         input(type="text" placeholder="Tìm kiếm")

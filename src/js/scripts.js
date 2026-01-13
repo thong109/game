@@ -79,7 +79,7 @@
         html.classList.remove("is-device-touchable");
       }
 
-      // Mobile / Desktop / Tablet checks
+      // Mobile / Desktop / tablet checks
       if (window.innerWidth < mobileBreak) {
         if (window.screen.width < mobileXSBreak) {
           viewport?.setAttribute(
@@ -147,44 +147,38 @@
     });
   };
 
-  const buttonTop = () => {
-    const buttons = document.querySelectorAll(".js-button-top");
-    if (!buttons.length) return;
+  const triggerTab = () => {
+    const toggles = document.querySelectorAll(".js-tab__toggle");
+    const classTabActive = "is-tab-active";
+    if (!toggles.length) return;
 
-    buttons.forEach((button) => {
-      const classReady = "is-ready";
-      const classVisible = "is-visible";
-      const classStatic = "is-static";
-      const buttonWrapper = button.querySelector(".button-wrapper");
+    toggles.forEach((toggle) => {
+      const ids = (toggle.getAttribute("data-tab-id") || "").split(" ").filter(Boolean);
 
-      const scrolling = () => {
-        const buttonPosition = button.offsetTop;
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const startPosition = window.innerHeight * 1.5;
+      if (!ids.length) return;
 
-        button.classList.toggle(classVisible, scrollPosition >= startPosition);
-        button.classList.toggle(classStatic, scrollPosition > buttonPosition);
-        button.classList.add(classReady);
-      };
+      const targets = ids.flatMap((id) => Array.from(document.querySelectorAll(`.js-tab__target[data-tab-id="${id}"]`)));
 
-      buttonWrapper?.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
+      toggle.addEventListener("click", () => {
+        toggles.forEach((otherToggle) => {
+          const otherIds = (otherToggle.getAttribute("data-tab-id") || "").split(" ").filter(Boolean);
+          if (otherIds.some((id) => ids.includes(id))) {
+            otherToggle.classList.remove(classTabActive);
+          }
+        });
+        ids.forEach((id) => {
+          document.querySelectorAll(`.js-tab__target[data-tab-id="${id}"]`).forEach((otherTarget) => {
+            otherTarget.classList.remove(classTabActive);
+          });
+        });
+        toggle.classList.toggle(classTabActive);
+        targets.forEach((target) => {
+          target.classList.toggle(classTabActive);
         });
       });
-
-      const safeScroll = () => {
-        if (!window.isWindowFrozen) scrolling();
-      };
-
-      window.addEventListener("load", safeScroll);
-      window.addEventListener("resize", safeScroll);
-      window.addEventListener("scroll", safeScroll);
-
-      scrolling();
     });
   };
+
 
   window.WebFontConfig = {
     custom: {
@@ -214,4 +208,5 @@
   detectDevice();
   detectState();
   triggerClick();
+  triggerTab();
 })();

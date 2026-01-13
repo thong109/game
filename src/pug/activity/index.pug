@@ -12,7 +12,7 @@ block content
   .c-section-news
     .u-wrapper
       h1.u-display-hidden Activity
-      +filtersCommonNews()
+      +filtersCommonNews({id: "activity"})
       +listCommonNews([
         {
           url: path+"/activity/detail/",
