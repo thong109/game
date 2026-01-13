@@ -13,7 +13,9 @@
 
   .c-breadcrumb__entry:not(:last-child) {
     &::after {
-      content: " / ";
+      content: "/";
+      margin: 0 0.25em;
+      display: inline-block;
     }
   }
 
@@ -47,6 +49,16 @@
 
     .c-breadcrumb__entry-wrapper::after {
       height: 0.03rem;
+    }
+  }
+
+  @include mobile {
+    margin: 1.05rem 0 0.18rem;
+    font-size: .14rem;
+    line-height: calc(18 / 14);
+
+    .c-breadcrumb__entry-wrapper::after {
+      height: 0.01rem;
     }
   }
 }

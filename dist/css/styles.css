@@ -948,7 +948,9 @@ html.is-touchable .u-effect-hover:hover {
   flex-wrap: wrap;
 }
 .c-breadcrumb .c-breadcrumb__entry:not(:last-child)::after {
-  content: " / ";
+  content: "/";
+  margin: 0 0.25em;
+  display: inline-block;
 }
 .c-breadcrumb .c-breadcrumb__entry-wrapper {
   display: inline-block;
@@ -976,6 +978,16 @@ html.is-touchable .u-effect-hover:hover {
   }
   .c-breadcrumb .c-breadcrumb__entry-wrapper::after {
     height: 0.03rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .c-breadcrumb {
+    margin: 1.05rem 0 0.18rem;
+    font-size: 0.14rem;
+    line-height: 1.2857142857;
+  }
+  .c-breadcrumb .c-breadcrumb__entry-wrapper::after {
+    height: 0.01rem;
   }
 }
 
@@ -1454,6 +1466,34 @@ html.is-touchable .u-effect-hover:hover {
     margin-top: 0.55rem;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  .c-single {
+    padding-bottom: 0.21rem;
+  }
+  .c-single .c-single__heading {
+    margin-bottom: 0.35rem;
+  }
+  .c-single .c-single__heading:has(.c-single__heading-excerpt) {
+    margin-bottom: 0.175rem;
+  }
+  .c-single .c-single__heading:has(.c-single__heading-excerpt) .c-single__heading-title {
+    margin-bottom: 0.35rem;
+  }
+  .c-single .c-single__heading-title {
+    font-size: 0.28rem;
+    line-height: 1.25;
+  }
+  .c-single .c-single__heading-excerpt {
+    font-size: 0.12rem;
+    line-height: 1.4583333333;
+  }
+  .c-single .u-wrapper {
+    width: calc(100% - 0.35rem);
+  }
+  .c-single .c-single-footing {
+    margin-top: 0.19rem;
+  }
+}
 
 .c-post {
   color: #4a4a4a;
@@ -1545,7 +1585,6 @@ html.is-touchable .u-effect-hover:hover {
   .c-post h4,
   .c-post h5,
   .c-post h6 {
-    font-size: 1.28em;
     line-height: 1.25;
   }
   .c-post h4 {
@@ -1596,5 +1635,97 @@ html.is-touchable .u-effect-hover:hover {
   }
   .c-post figure {
     margin-bottom: 0.28rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .c-post {
+    font-size: 0.12rem;
+    line-height: 1.4583333333;
+  }
+  .c-post h1,
+  .c-post h2,
+  .c-post h3,
+  .c-post h4,
+  .c-post h5,
+  .c-post h6 {
+    margin-bottom: 0.06rem;
+  }
+  .c-post h1 + p,
+  .c-post h2 + p,
+  .c-post h3 + p,
+  .c-post h4 + p,
+  .c-post h5 + p,
+  .c-post h6 + p {
+    margin-top: 0.1rem;
+  }
+  .c-post h1 + figure,
+  .c-post h2 + figure,
+  .c-post h3 + figure,
+  .c-post h4 + figure,
+  .c-post h5 + figure,
+  .c-post h6 + figure {
+    margin-top: 0.55rem;
+  }
+  .c-post h2 {
+    font-size: 1.6666666667em;
+    line-height: 1.25;
+  }
+  .c-post h3 {
+    font-size: 1.1666666667em;
+    line-height: 1.2857142857;
+  }
+  .c-post h4,
+  .c-post h5,
+  .c-post h6 {
+    line-height: 1.2857142857;
+  }
+  .c-post h4 {
+    font-size: 1.3333333333em;
+  }
+  .c-post h5 {
+    font-size: 1.1666666667em;
+  }
+  .c-post h6 {
+    font-size: 1.0833333333em;
+  }
+  .c-post p {
+    margin-bottom: 0.175rem;
+  }
+  .c-post p + h1, .c-post p + h2, .c-post p + h3, .c-post p + h4, .c-post p + h5, .c-post p + h6 {
+    margin-top: -0.115rem;
+  }
+  .c-post p + ul, .c-post p + ol {
+    margin-top: -0.175rem;
+  }
+  .c-post ul,
+  .c-post ol {
+    margin-bottom: 0.175rem;
+    padding-left: 0.16rem;
+  }
+  .c-post ul + figure,
+  .c-post ol + figure {
+    margin-top: 0.175rem;
+  }
+  .c-post ul ul,
+  .c-post ul ol,
+  .c-post ol ul,
+  .c-post ol ol {
+    padding-left: 0.1rem;
+  }
+  .c-post ul ul li::before,
+  .c-post ol ul li::before {
+    width: auto;
+    height: auto;
+    top: 0;
+    left: -0.1rem;
+  }
+  .c-post ul li::before {
+    width: 0.02rem;
+    height: 0.02rem;
+    top: 0.0775rem;
+    left: -0.1rem;
+  }
+  .c-post figure {
+    margin-bottom: 0.14rem;
   }
 }

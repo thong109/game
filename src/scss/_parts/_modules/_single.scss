@@ -49,6 +49,40 @@
       margin-top: .55rem;
     }
   }
+
+  @include mobile {
+    padding-bottom: .21rem;
+
+    .c-single__heading {
+      margin-bottom: .35rem;
+    }
+
+    .c-single__heading:has(.c-single__heading-excerpt) {
+      margin-bottom: .175rem;
+
+      .c-single__heading-title {
+        margin-bottom: .35rem;
+      }
+    }
+
+    .c-single__heading-title {
+      font-size: .28rem;
+      line-height: calc(35 / 28);
+    }
+
+    .c-single__heading-excerpt {
+      font-size: .12rem;
+      line-height: calc(17.5 / 12);
+    }
+
+    .u-wrapper {
+      width: calc(100% - 0.35rem);
+    }
+
+    .c-single-footing {
+      margin-top: .19rem;
+    }
+  }
 }
 
 .c-post {
@@ -150,7 +184,6 @@
     h4,
     h5,
     h6 {
-      font-size: calc(32 / 25 * 1em);
       line-height: calc(40 / 32);
     }
 
@@ -219,6 +252,111 @@
 
     figure {
       margin-bottom: .28rem;
+    }
+  }
+
+  @include mobile {
+    font-size: .12rem;
+    line-height: calc(17.5 / 12);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: .06rem;
+
+      &+p {
+        margin-top: .1rem;
+      }
+
+      &+figure {
+        margin-top: .55rem;
+      }
+    }
+
+    h2 {
+      font-size: calc(20 / 12 * 1em);
+      line-height: calc(25 / 20);
+    }
+
+    h3 {
+      font-size: calc(14 / 12 * 1em);
+      line-height: calc(18 / 14);
+    }
+
+    h4,
+    h5,
+    h6 {
+      line-height: calc(18 / 14);
+    }
+
+    h4 {
+      font-size: calc(16 / 12 * 1em);
+    }
+
+    h5 {
+      font-size: calc(14 / 12 * 1em);
+    }
+
+    h6 {
+      font-size: calc(13 / 12 * 1em);
+    }
+
+    p {
+      margin-bottom: .175rem;
+
+      &+h1,
+      &+h2,
+      &+h3,
+      &+h4,
+      &+h5,
+      &+h6 {
+        margin-top: -0.115rem;
+      }
+
+      &+ul,
+      &+ol {
+        margin-top: -.175rem;
+      }
+    }
+
+    ul,
+    ol {
+      margin-bottom: 0.175rem;
+      padding-left: .16rem;
+
+      &+figure {
+        margin-top: .175rem;
+      }
+
+      ul,
+      ol {
+        padding-left: .1rem;
+      }
+
+      ul {
+        li::before {
+          width: auto;
+          height: auto;
+          top: 0;
+          left: -.1rem;
+        }
+      }
+    }
+
+    ul {
+      li::before {
+        width: 0.02rem;
+        height: 0.02rem;
+        top: calc((17.5 - 2) / 2 * 0.01rem);
+        left: -0.1rem;
+      }
+    }
+
+    figure {
+      margin-bottom: .14rem;
     }
   }
 }
