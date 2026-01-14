@@ -207,10 +207,10 @@
 
   window.WebFontConfig = {
     custom: {
-      families: ["Rubik:n4", "Poppins:n4,n5", "Inter:n4,n6,n7", "Sansation:n4,n7", "Oxanium:n4,n6", "Bangers:n4"],
+      families: ["Rubik:n4,n5", "Poppins:n4,n5", "Inter:n4,n6,n7", "Sansation:n4,n7", "Oxanium:n4,n6", "Bangers:n4"],
       urls: [
         "https://fonts.googleapis.com/css2" +
-        "?family=Rubik:wght@400" +
+        "?family=Rubik:wght@400;500" +
         "&family=Poppins:wght@400;500" +
         "&family=Inter:wght@400;600;700" +
         "&family=Sansation:wght@400;700" +
