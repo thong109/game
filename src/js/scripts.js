@@ -205,6 +205,49 @@
     });
   };
 
+  const gamePlaySlider = () => {
+    const sliders = document.querySelectorAll(".js-game-play__slider");
+    if (!sliders.length) return;
+
+    sliders.forEach((container) => {
+        const slider = container.querySelector(".swiper");
+        const wrapper = slider.querySelector(".swiper-wrapper");
+        const slides = wrapper.children;
+
+        // Clone slide nếu <= 3
+        if (slides.length > 0 && slides.length <= 3) {
+          const cloneCount = slides.length;
+          for (let i = 0; i < cloneCount; i++) {
+            wrapper.appendChild(slides[i].cloneNode(true));
+          }
+        }
+
+        new Swiper(slider, {
+          loop: true,
+          speed: 1500,
+          slidesPerView: 3,
+          centeredSlides: true,
+          spaceBetween: 36,
+          watchOverflow: true,
+          preventClicks: true,
+          preventClicksPropagation: true,
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+          },
+
+          navigation: {
+            nextEl: container.querySelector(".swiper-button-next"),
+            prevEl: container.querySelector(".swiper-button-prev"),
+          },
+        });
+      });
+  }
+
   window.WebFontConfig = {
     custom: {
       families: ["Rubik:n4,n5", "Poppins:n4,n5", "Inter:n4,n6,n7", "Sansation:n4,n7", "Oxanium:n4,n6", "Bangers:n4"],
@@ -236,4 +279,5 @@
   triggerClick();
   triggerTab();
   effectEyesFollow();
+  gamePlaySlider();
 })();

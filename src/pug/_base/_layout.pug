@@ -78,11 +78,16 @@ html(lang="en" class="is-page-"+page)
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title #{metaTitle}
+    if(["top"].includes(page))
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css")
     link(rel="stylesheet" href=path+"/css/styles.css")
   body
     include ../_parts/_header.pug
     main.l-main
       block content
     include ../_parts/_footer.pug
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js")
+    if(["top"].includes(page))
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js")
     script(src=path+"/js/scripts.js") 
 
