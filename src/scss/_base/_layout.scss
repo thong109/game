@@ -179,7 +179,7 @@ svg {
   margin-left: auto;
 
   @include desktop {
-    width: calc(100% - 0.88rem);
+    width: calc(100% - 0.4rem);
     max-width: $wrapper-width;
   }
 

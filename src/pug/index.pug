@@ -76,6 +76,101 @@ block content
       a.p-button-top-highlight(href="#" target="_blank" rel="noopener")
         .p-button-top-highlight__wrapper
           span.p-button-top-highlight__label TẢI NGAY
+  section.p-section-top-news
+    h2.c-title-primary.is-align-right
+      span.c-title-primary__wrapper Tin tức 
+    +tabCommonNews()
+    .u-wrapper
+      .c-frame-tabbing.is-tab-active.js-tab__target(data-tab-id="tab-category tab-category-event")
+        .c-frame-tabbing__wrapper
+          +filtersCommonNews({id: "event"})
+          +listCommonNews([
+            {
+              url: path+"/event/detail/",
+              title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_event_01.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+            {
+              url: path+"/event/detail/",
+              title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_event_02.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+            {
+              url: path+"/event/detail/",
+              title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_event_03.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+          ])
+          +paginationCommon()
+      .c-frame-tabbing.js-tab__target(data-tab-id="tab-category tab-category-activity")
+        .c-frame-tabbing__wrapper
+          +filtersCommonNews({id: "activity"})
+          +listCommonNews([
+            {
+              url: path+"/activity/detail/",
+              title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_activity_01.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+            {
+              url: path+"/activity/detail/",
+              title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_activity_02.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+            {
+              url: path+"/activity/detail/",
+              title: {tag: "h2", content: "Sự kiện nạp tân thủ"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_activity_03.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+          ])
+          +paginationCommon()
+      .c-frame-tabbing.js-tab__target(data-tab-id="tab-category tab-category-tutorial")
+        .c-frame-tabbing__wrapper
+          +filtersCommonNews({id: "tutorial"})
+          +listCommonNews([
+            {
+              url: path+"/tutorial/detail/",
+              title: {tag: "h2", content: "Chức năng bang hội"},
+              description: "Bang hội nơi những thành viên có cùng chí hướng tập trung lại và phát triển nhanh chóng",
+              thumbnail: {src: imgCommonPC+"placeholder_activity_01.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+            {
+              url: path+"/tutorial/detail/",
+              title: {tag: "h2", content: "Chức năng luyện ngọc rồng"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_activity_02.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+            {
+              url: path+"/tutorial/detail/",
+              title: {tag: "h2", content: "Chức năng ghép ngọc rồng"},
+              description: "Chào mừng bản cập nhật mừng sinh nhật Liên Quân 8 tuổi, chúng tôi xin giới thiệu quà nạp lần đầu mới.",
+              thumbnail: {src: imgCommonPC+"placeholder_activity_03.jpg", alt: ""},
+              date: {value: "15/09/2025", format: "2025-09-15"},
+              views: 9686,
+            },
+          ])
+          +paginationCommon()
   section.p-section-top-gameplay
     h2.c-title-primary.is-align-left
       span.c-title-primary__wrapper Gameplay

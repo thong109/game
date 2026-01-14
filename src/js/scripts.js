@@ -149,31 +149,36 @@
 
   const triggerTab = () => {
     const toggles = document.querySelectorAll(".js-tab__toggle");
+    const targets = document.querySelectorAll(".js-tab__target");
     const classTabActive = "is-tab-active";
+
     if (!toggles.length) return;
 
+    const parseIds = (el) => (el.getAttribute("data-tab-id") || "").split(" ").filter(Boolean);
     toggles.forEach((toggle) => {
-      const ids = (toggle.getAttribute("data-tab-id") || "").split(" ").filter(Boolean);
-
-      if (!ids.length) return;
-
-      const targets = ids.flatMap((id) => Array.from(document.querySelectorAll(`.js-tab__target[data-tab-id="${id}"]`)));
+      const toggleIds = parseIds(toggle);
+      const groupId = toggleIds[0];
+      const tabId = toggleIds[1];
 
       toggle.addEventListener("click", () => {
-        toggles.forEach((otherToggle) => {
-          const otherIds = (otherToggle.getAttribute("data-tab-id") || "").split(" ").filter(Boolean);
-          if (otherIds.some((id) => ids.includes(id))) {
-            otherToggle.classList.remove(classTabActive);
+        toggles.forEach((t) => {
+          const ids = parseIds(t);
+          if (ids.includes(groupId)) {
+            t.classList.remove(classTabActive);
           }
         });
-        ids.forEach((id) => {
-          document.querySelectorAll(`.js-tab__target[data-tab-id="${id}"]`).forEach((otherTarget) => {
-            otherTarget.classList.remove(classTabActive);
-          });
-        });
-        toggle.classList.toggle(classTabActive);
         targets.forEach((target) => {
-          target.classList.toggle(classTabActive);
+          const ids = parseIds(target);
+          if (ids.includes(groupId)) {
+            target.classList.remove(classTabActive);
+          }
+        });
+        toggle.classList.add(classTabActive);
+        targets.forEach((target) => {
+          const ids = parseIds(target);
+          if (ids.includes(groupId) && ids.includes(tabId)) {
+            target.classList.add(classTabActive);
+          }
         });
       });
     });
@@ -253,14 +258,14 @@
 
   window.WebFontConfig = {
     custom: {
-      families: ["Rubik:n4,n5", "Poppins:n4,n5", "Inter:n4,n6,n7", "Sansation:n4,n7", "Oxanium:n4,n6", "Bangers:n4"],
+      families: ["Rubik:n4,n5", "Poppins:n4,n5", "Inter:n4,n6,n7", "Sansation:n4,n7", "Oxanium:n4,n5,n6", "Bangers:n4"],
       urls: [
         "https://fonts.googleapis.com/css2" +
         "?family=Rubik:wght@400;500" +
         "&family=Poppins:wght@400;500" +
         "&family=Inter:wght@400;600;700" +
         "&family=Sansation:wght@400;700" +
-        "&family=Oxanium:wght@400;600" +
+        "&family=Oxanium:wght@400;500;600" +
         "&family=Bangers:wght@400" +
         "&display=swap"
       ],
