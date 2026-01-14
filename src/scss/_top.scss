@@ -1,5 +1,5 @@
 @charset "utf-8";
-@use "_base/base"as *;
+@use "_base/base" as *;
 
 @keyframes floatTopVisual {
   0% {
@@ -58,12 +58,12 @@
   }
 
   @include desktop {
-    height: 11.08rem;
+    padding-bottom: 0.82rem;
     background: url(../resources/images/top/background_visual_01.svg) 50% calc(50% - 1.33rem) / 20.15rem auto no-repeat, url(../resources/images/top/background_visual_02.jpg) 50% 0% / cover no-repeat;
   }
 
   @include mobile {
-    height: 4.98rem;
+    padding-bottom: 0.3rem;
     background: url(../resources/images/top/sp/background_visual_01.svg) 50% 0% / 100% auto no-repeat, url(../resources/images/top/sp/background_visual_02.jpg) 50% 0% / cover no-repeat;
   }
 }
@@ -202,7 +202,7 @@
 
   @include mobile {
     max-width: 3.16rem;
-    margin-bottom: .43rem;
+    margin-bottom: .12rem;
     grid-template-columns: repeat(2, 1fr);
     gap: .12rem .18rem;
   }
@@ -270,6 +270,7 @@
 
   .p-button-top-system__label-main {
     font-weight: 500;
+    letter-spacing: -0.07em;
   }
 
   @include desktop {
@@ -287,7 +288,7 @@
     }
 
     .p-button-top-system__wrapper {
-      height: .78rem;
+      min-height: .78rem;
       padding: 0.05rem 0.13rem;
       clip-path: polygon(calc(.13rem) 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0% calc(.13rem));
       gap: 0.16rem;
@@ -295,7 +296,6 @@
 
     .p-button-top-system__icon {
       width: 0.5rem;
-      margin-right: 0;
     }
 
     .p-button-top-system__label-sub {
@@ -307,12 +307,47 @@
     .p-button-top-system__label-main {
       font-size: .3rem;
       line-height: calc(36 / 30);
-      letter-spacing: -0.07em;
+    }
+  }
+
+  @include mobile {
+    &::before {
+      top: 0.02rem;
+    }
+
+    .p-button-system__shadow {
+      top: 0.02rem;
+      left: 0.02rem;
+    }
+
+    .p-button-system__shadow::before {
+      clip-path: polygon(calc(.07rem) 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0% calc(.07rem));
+    }
+
+    .p-button-top-system__wrapper {
+      min-height: .35rem;
+      padding: 0.02rem 0.11rem;
+      clip-path: polygon(calc(.07rem) 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0% calc(.07rem));
+      gap: 0.09rem;
+    }
+
+    .p-button-top-system__icon {
+      width: 0.24rem;
+    }
+
+    .p-button-top-system__label-sub {
+      margin-bottom: -.03rem;
+      font-size: .1rem;
+    }
+
+    .p-button-top-system__label-main {
+      font-size: .14rem;
+      line-height: calc(17 / 14);
     }
   }
 }
 
-.p-button-top-higlight {
+.p-button-top-highlight {
   width: 100%;
   position: relative;
   text-align: center;
@@ -342,7 +377,7 @@
     }
   }
 
-  .p-button-top-higlight__wrapper {
+  .p-button-top-highlight__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -362,7 +397,7 @@
       left: calc(-22 / 397 * 100%);
     }
 
-    .p-button-top-higlight__wrapper {
+    .p-button-top-highlight__wrapper {
       padding: 0.18rem;
       border: 0.1rem solid #121212;
       background: #efa009 url(../resources/images/top/button_highlight_01_pattern.svg) calc(100% + 2.2rem) calc(100% + 1.31rem) / 3.16rem auto no-repeat;
