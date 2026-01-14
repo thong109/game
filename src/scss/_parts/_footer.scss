@@ -40,8 +40,7 @@
     .l-footer-common__wrapper {
       background: url(../resources/images/common/background_footer_01.png) 0% 0% / 100% 100% repeat, url(../resources/images/common/pattern_footer_01.svg) 0% 0% / auto auto repeat;
       background-color: #000;
-      margin-top: .33rem;
-      border-top: 0.03rem solid #efa009;
+      margin-top: .31rem;
     }
 
     .u-wrapper {
@@ -62,8 +61,7 @@
     .l-footer-common__wrapper {
       background: url(../resources/images/common/sp/background_footer_01.png) 0% 0% / 100% 100% repeat, url(../resources/images/common/sp/pattern_footer_01.svg) 0% 0% / auto auto repeat;
       background-color: #000;
-      margin-top: .13rem;
-      border-top: 0.02rem solid #efa009;
+      margin-top: .12rem;
     }
 
     .u-wrapper {
@@ -103,11 +101,12 @@
 
   @include desktop {
     padding: .71rem 0 .62rem;
+    border-top: 0.03rem solid #efa009;
 
     &::before {
       width: calc(50% - 3.27rem);
       height: .32rem;
-      bottom: calc(100% + 2px);
+      bottom: calc(100% - 1px);
       clip-path: polygon(0 0, calc(100% - .58rem) 0%, 100% 100%, 0% 100%);
     }
 
@@ -146,11 +145,12 @@
 
   @include mobile {
     padding: .05rem 0 .1rem;
+    border-top: 0.02rem solid #efa009;
 
     &::before {
       width: 1.2rem;
       height: .13rem;
-      bottom: calc(100% + 1px);
+      bottom: calc(100% - 1px);
       clip-path: polygon(0 0, calc(100% - .19rem) 0%, 100% 100%, 0% 100%);
     }
 

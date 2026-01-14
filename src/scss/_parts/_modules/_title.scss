@@ -1,2 +1,97 @@
 @charset "utf-8";
-@use "../../_base/base"as *;
+@use "../../_base/base" as *;
+
+.c-title-primary {
+  margin: 0;
+  display: flex;
+  position: relative;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 600;
+  color: #efa009;
+
+  &::before {
+    content: "";
+    background-color: #efa009;
+    position: absolute;
+    bottom: 100%;
+  }
+
+  .c-title-primary__wrapper {
+    display: block;
+    position: relative;
+    flex: 1 1 auto;
+  }
+
+  @include desktop {
+    padding-bottom: 0.13rem;
+    border-bottom: 0.03rem solid #efa009;
+    font-size: 0.5rem;
+    line-height: calc(63 / 50);
+
+    &::before {
+      width: calc(50% - 3.27rem);
+      height: .32rem;
+      bottom: -1px;
+    }
+
+    .c-title-primary__wrapper {
+      margin: 0 0.2rem;
+    }
+  }
+
+  @include mobile {
+    border-bottom: 0.02rem solid #efa009;
+
+    &::before {
+      width: 1.2rem;
+      height: .13rem;
+      bottom: -1px;
+    }
+  }
+}
+
+.c-title-primary.is-align-right {
+  &::before {
+    left: 0;
+  }
+
+  @include desktop {
+    &::before {
+      clip-path: polygon(0 0, calc(100% - .58rem) 0%, 100% 100%, 0% 100%);
+    }
+
+    .c-title-primary__wrapper {
+      padding-right: calc(50% - 6.97rem - 0.2rem);
+      padding-left: calc(50% - 2.97rem - 0.2rem);
+    }
+  }
+
+  @include mobile {
+    &::before {
+      clip-path: polygon(0 0, calc(100% - .19rem) 0%, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+.c-title-primary.is-align-left {
+  &::before {
+    right: 0;
+  }
+
+  @include desktop {
+    &::before {
+      clip-path: polygon(calc(0.58rem) 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .c-title-primary__wrapper {
+      padding-right: calc(50% - 2.97rem - 0.2rem);
+      padding-left: calc(50% - 6.97rem - 0.2rem);
+    }
+  }
+
+  @include mobile {
+    &::before {
+      clip-path: polygon(calc(0.19rem) 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}

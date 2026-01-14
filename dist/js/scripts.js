@@ -205,47 +205,50 @@
     });
   };
 
-  const gamePlaySlider = () => {
-    const sliders = document.querySelectorAll(".js-game-play__slider");
+  const sliderGameplay = () => {
+    const sliders = document.querySelectorAll(".js-slider-gameplay");
     if (!sliders.length) return;
 
     sliders.forEach((container) => {
-        const slider = container.querySelector(".swiper");
-        const wrapper = slider.querySelector(".swiper-wrapper");
-        const slides = wrapper.children;
+      const slider = container.querySelector(".swiper");
+      const wrapper = slider.querySelector(".swiper-wrapper");
+      const slides = wrapper.children;
 
-        // Clone slide nếu <= 3
-        if (slides.length > 0 && slides.length <= 3) {
-          const cloneCount = slides.length;
-          for (let i = 0; i < cloneCount; i++) {
-            wrapper.appendChild(slides[i].cloneNode(true));
-          }
+      if (slides.length > 0 && slides.length <= 3) {
+        const cloneCount = slides.length;
+        for (let i = 0; i < cloneCount; i++) {
+          wrapper.appendChild(slides[i].cloneNode(true));
         }
+      }
 
-        new Swiper(slider, {
-          loop: true,
-          speed: 1500,
-          slidesPerView: 3,
-          centeredSlides: true,
-          spaceBetween: 36,
-          watchOverflow: true,
-          preventClicks: true,
-          preventClicksPropagation: true,
-          breakpoints: {
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 3,
-            },
+      new Swiper(slider, {
+        loop: true,
+        speed: 500,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 0,
+        watchOverflow: true,
+        preventClicks: true,
+        preventClicksPropagation: true,
+        allowTouchMove: false,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
           },
-
-          navigation: {
-            nextEl: container.querySelector(".swiper-button-next"),
-            prevEl: container.querySelector(".swiper-button-prev"),
+          768: {
+            slidesPerView: "auto",
           },
-        });
+        },
+        navigation: {
+          nextEl: container.querySelector(".swiper-button-next"),
+          prevEl: container.querySelector(".swiper-button-prev"),
+        },
+        pagination: {
+          el: container.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
       });
+    });
   }
 
   window.WebFontConfig = {
@@ -279,5 +282,5 @@
   triggerClick();
   triggerTab();
   effectEyesFollow();
-  gamePlaySlider();
+  sliderGameplay();
 })();
