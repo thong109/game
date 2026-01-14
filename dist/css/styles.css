@@ -1887,14 +1887,14 @@ html.is-page-top .l-footer-common::before {
 }
 @media only screen and (max-width: 767.98px) {
   .p-banner-top-visual {
-    margin: 0.31rem -0.1rem 0;
+    width: calc(100% + 0.2rem);
+    margin: 0.31rem -0.1rem -1.22rem;
   }
 }
 
 .p-list-top-system {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   position: relative;
   z-index: 1;
@@ -1906,7 +1906,16 @@ html.is-page-top .l-footer-common::before {
   .p-list-top-system {
     max-width: 12.42rem;
     margin-bottom: 0.43rem;
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.42rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .p-list-top-system {
+    max-width: 3.16rem;
+    margin-bottom: 0.43rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.12rem 0.18rem;
   }
 }
 
