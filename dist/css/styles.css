@@ -1905,7 +1905,7 @@ html.is-page-top .l-footer-common::before {
 @media print, (min-width: 768px) {
   .p-list-top-system {
     max-width: 12.42rem;
-    margin-bottom: 0.41rem;
+    margin-bottom: 0.43rem;
     gap: 0.42rem;
   }
 }
@@ -2000,23 +2000,56 @@ html.is-page-top .l-footer-common::before {
 }
 
 .p-button-top-higlight {
+  width: 100%;
   position: relative;
+  text-align: center;
+  font-family: "Bangers", sans-serif;
+  font-weight: 400;
+  color: #121212;
+  transition: transform 0.5s ease;
 }
 .p-button-top-higlight::before {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(../resources/images/top/button_highlight_01_background.svg) 50% 50%/100% 100% no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
+  background-color: #121212;
+  clip-path: polygon(0% 0%, 53.883% 18.219%, 77.298% 4.215%, 100% 4.215%, 100% 4.215%, 100% 9.598%, 100% 15.114%, 100% 20.598%, 100% 25.886%, 100% 30.812%, 100% 35.213%, 100% 38.922%, 100% 41.775%, 100% 43.608%, 100% 44.256%, 100% 68.185%, 100% 77.906%, 100% 81.781%, 24.802% 100%, 0% 0%);
+  transition: transform 0.5s ease;
 }
-.p-button-top-higlight .p-button-top-system__wrapper {
+.p-button-top-higlight:hover {
+  transform: scale(1.2, 1.2) rotate(5deg);
+}
+.p-button-top-higlight:hover::before {
+  transform: skew(-65deg, 1deg) translate(-5%, 1%);
+}
+.p-button-top-higlight .p-button-top-higlight__wrapper {
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
+}
+@media print, (min-width: 768px) {
+  .p-button-top-higlight {
+    max-width: 3.97rem;
+    font-size: 0.5rem;
+    line-height: 1.06;
+  }
+  .p-button-top-higlight::before {
+    width: 107.8085642317%;
+    height: 131.4814814815%;
+    top: -4.2253521127%;
+    left: -5.5415617128%;
+  }
+  .p-button-top-higlight .p-button-top-higlight__wrapper {
+    padding: 0.18rem;
+    border: 0.1rem solid #121212;
+    background: #efa009 url(../resources/images/top/button_highlight_01_pattern.svg) calc(100% + 2.2rem) calc(100% + 1.31rem)/3.16rem auto no-repeat;
+  }
 }
 
 .p-list-top-gameplay {

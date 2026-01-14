@@ -195,7 +195,7 @@
 
   @include desktop {
     max-width: 12.42rem;
-    margin-bottom: .41rem;
+    margin-bottom: .43rem;
     gap: .42rem;
   }
 }
@@ -305,24 +305,60 @@
 }
 
 .p-button-top-higlight {
+  width: 100%;
   position: relative;
+  text-align: center;
+  font-family: "Bangers", sans-serif;
+  font-weight: 400;
+  color: #121212;
+  transition: transform 0.5s ease;
 
   &::before {
     content: "";
     width: 100%;
     height: 100%;
-    background: url(../resources/images/top/button_highlight_01_background.svg) 50% 50% / 100% 100% no-repeat;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
+    background-color: #121212;
+    clip-path: polygon(0% 0%, 53.883% 18.219%, 77.298% 4.215%, 100% 4.215%, 100% 4.215%, 100% 9.598%, 100% 15.114%, 100% 20.598%, 100% 25.886%, 100% 30.812%, 100% 35.213%, 100% 38.922%, 100% 41.775%, 100% 43.608%, 100% 44.256%, 100% 68.185%, 100% 77.906%, 100% 81.781%, 24.802% 100%, 0% 0%);
+    transition: transform 0.5s ease;
   }
 
-  .p-button-top-system__wrapper {
+  &:hover {
+    transform: scale(1.2, 1.2) rotate(5deg);
+
+    &::before {
+      transform: skew(-65deg, 1deg) translate(-5%, 1%)
+    }
+  }
+
+  .p-button-top-higlight__wrapper {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     z-index: 1;
+  }
+
+  @include desktop {
+    max-width: 3.97rem;
+    font-size: 0.5rem;
+    line-height: calc(53 / 50);
+
+    &::before {
+      width: calc(428 / 397 * 100%);
+      height: calc(142 / 108 * 100%);
+      top: calc(-6 / 142 * 100%);
+      left: calc(-22 / 397 * 100%);
+    }
+
+    .p-button-top-higlight__wrapper {
+      padding: 0.18rem;
+      border: 0.1rem solid #121212;
+      background: #efa009 url(../resources/images/top/button_highlight_01_pattern.svg) calc(100% + 2.2rem) calc(100% + 1.31rem) / 3.16rem auto no-repeat;
+    }
   }
 }
 
