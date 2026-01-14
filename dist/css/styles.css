@@ -2391,3 +2391,30 @@ html.is-page-top .l-footer-common::before {
     background-position: 62% 50%;
   }
 }
+
+@media print, (min-width: 768px) {
+  .p-section-top-news {
+    margin-bottom: -0.34rem;
+  }
+  .p-section-top-news .c-title-primary {
+    margin-bottom: 0.25rem;
+  }
+  .p-section-top-news .c-tab-news {
+    margin-bottom: 0.34rem;
+  }
+  .p-section-top-news .c-filters-news {
+    margin-bottom: 0.3rem;
+  }
+  .p-section-top-news .c-pagination {
+    margin-top: 0.24rem;
+  }
+}
+
+@media print, (min-width: 768px) {
+  .p-section-top-gameplay {
+    margin-bottom: 0.82rem;
+  }
+  .p-section-top-gameplay .c-title-primary {
+    margin-bottom: 0.65rem;
+  }
+}
