@@ -142,7 +142,14 @@
   }
 }
 
-.c-pagination__common.is-nearfooter {
+.c-pagination.is-neartitle {
+  @include desktop {
+    padding-left: 4.19rem;
+    justify-content: flex-start;
+  }
+}
+
+.c-pagination.is-nearfooter {
   @include desktop {
     padding-left: 4.37rem;
     justify-content: flex-start;

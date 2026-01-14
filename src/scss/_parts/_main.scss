@@ -5,6 +5,12 @@
   @include desktop {
     padding-top: .86rem;
     background: #fff url(../resources/images/common/background_page_01.svg) calc(50% + 2.63rem) calc(0% - 2.98rem) / 21.31rem auto no-repeat;
+
+    html.is-page-top & {
+      background: url(../resources/images/common/background_page_01.svg) calc(50% - 8.24rem) calc(100% - 10.79rem) / 21.31rem auto no-repeat,
+        url(../resources/images/common/background_page_01.svg) calc(50% + 2.64rem) calc(100% - .56rem) / 21.31rem auto no-repeat;
+      background-color: #fff;
+    }
   }
 
   @include mobile {

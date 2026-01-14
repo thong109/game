@@ -575,14 +575,15 @@
 
 .p-section-top-news {
   @include desktop {
-    margin-bottom: -0.34rem;
+    margin-bottom: -0.24rem;
 
     .c-title-primary {
       margin-bottom: .25rem;
     }
 
     .c-tab-news {
-      margin-bottom: .34rem;
+      max-width: 14.4rem;
+      margin: 0 auto .34rem;
     }
 
     .c-filters-news {
