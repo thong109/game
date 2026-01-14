@@ -16,13 +16,13 @@ mixin filtersCommonNews(data)
     .c-filters-news__extra
       .c-input-search
         input(type="text" placeholder="Tìm kiếm")
-        button(type="submit")
+        button.u-effect-hover(type="submit")
 
 mixin listCommonNews(data)
   ul.c-list-news&attributes(attributes)
     each item in data
       li.c-list-news__item
-        a.c-list-news__item-wrapper(href=item.url)
+        a.c-list-news__item-wrapper.u-effect-hover(href=item.url)
           .c-list-news__item-thumbnail
             figure.thumbnail-wrapper
               img.u-object(src=item.thumbnail.src alt=item.thumbnail.alt)
