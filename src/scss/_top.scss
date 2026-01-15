@@ -594,6 +594,26 @@
       margin-top: .24rem;
     }
   }
+
+  @include mobile {
+    margin-bottom: -0.08rem;
+
+    .c-title-primary {
+      margin-bottom: .07rem;
+    }
+
+    .c-tab-news {
+      margin: 0 auto .14rem;
+    }
+
+    .c-filters-news {
+      margin-bottom: .13rem;
+    }
+
+    .c-pagination {
+      margin-top: .09rem;
+    }
+  }
 }
 
 .p-section-top-gameplay {

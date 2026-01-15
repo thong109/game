@@ -41,11 +41,17 @@
 
   @include mobile {
     border-bottom: 0.02rem solid #efa009;
+    font-size: 0.18rem;
+    line-height: calc(23 / 18);
 
     &::before {
       width: 1.2rem;
       height: .13rem;
       bottom: -1px;
+    }
+
+    .c-title-primary__wrapper {
+      margin: 0 0.1rem -0.01rem;
     }
   }
 }
@@ -72,6 +78,10 @@
     &::before {
       clip-path: polygon(0 0, calc(100% - .19rem) 0%, 100% 100%, 0% 100%);
     }
+
+    .c-title-primary__wrapper {
+      padding-left: calc(50% + 0.7rem - 0.1rem);
+    }
   }
 }
 
@@ -96,6 +106,10 @@
   @include mobile {
     &::before {
       clip-path: polygon(calc(0.19rem) 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .c-title-primary__wrapper {
+      padding-right: calc(50% + 0.7rem - 0.2rem);
     }
   }
 }

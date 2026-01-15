@@ -143,9 +143,14 @@
 }
 
 .c-pagination.is-neartitle {
+  justify-content: flex-start;
+
   @include desktop {
     padding-left: 4.19rem;
-    justify-content: flex-start;
+  }
+
+  @include mobile {
+    padding-left: 1.41rem;
   }
 }
 
@@ -153,9 +158,5 @@
   @include desktop {
     padding-left: 4.37rem;
     justify-content: flex-start;
-  }
-
-  @include mobile {
-    margin-top: .9rem;
   }
 }

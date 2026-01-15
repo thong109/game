@@ -9,6 +9,10 @@
   font-weight: 600;
   color: #121212;
 
+  .c-icon-views__wrapper {
+    position: relative;
+  }
+
   @include desktop {
     background-size: .16rem auto;
     background-position: calc(0% + 0.17rem) 50%;
@@ -25,5 +29,9 @@
     border-radius: 0.02rem;
     font-size: 0.08rem;
     line-height: calc(10 / 8);
+
+    .c-icon-views__wrapper {
+      top: 0.01rem;
+    }
   }
 }
