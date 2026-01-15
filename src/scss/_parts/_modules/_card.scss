@@ -26,7 +26,6 @@
     margin: 0;
     display: block;
     text-align: center;
-    color: #ffd363;
   }
 
   .c-card-character__content {
@@ -50,10 +49,10 @@
     .c-card-character__wrapper {
       --cut-size: 0.41rem 0 0.41rem 0;
       --border-width: 0.05rem;
-      --border-color: #ffd363;
       --border-type: inner;
+      --border-color: #fff;
+      background-color: rgba(#fff, 0.27);
       clip-path: path-highlight(0.41rem);
-      background-color: rgba(#3d2208, 0.27);
 
       &::before,
       &::after {
@@ -62,9 +61,8 @@
         height: 1.19rem;
         border-width: 0.03rem 0.03rem 0 0;
         border-style: solid;
-        border-color: #ffd363;
-        background-color: rgba(#3d2208, 0.27);
         position: absolute;
+        background-color: rgba(#fff, 0.27);
         clip-path: polygon(0 0, 100% 100%, 100% 0);
       }
 

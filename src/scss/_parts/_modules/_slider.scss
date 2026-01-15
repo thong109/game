@@ -2,12 +2,24 @@
 @use "../../_base/base" as *;
 
 .c-slide-character {
+  position: relative;
   color: #fff;
   font-family: "Oxanium", sans-serif;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: #fff;
+    opacity: 0.16;
+  }
 
   .c-slide-character__viewport {
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
   }
 
   .c-slide-character__thumbnail {
@@ -37,7 +49,15 @@
   }
 
   @include desktop {
-    padding: 0.95rem 0.92rem 0;
+    &::before {
+      mask: url(../resources/images/common/mask_character_01.svg) calc(50% - 1.09rem) calc(50% + 0.13rem) / 23.33rem auto no-repeat;
+    }
+
+    .c-slide-character__viewport {
+      max-width: 14.4rem;
+      margin: 0 auto;
+      padding: 0.95rem 0.92rem 0;
+    }
 
     .c-slide-character__wrapper {
       order: 2;
@@ -68,6 +88,122 @@
   }
 }
 
+.c-slide-character.is-goku {
+  &::before {
+    background-color: #f68718;
+  }
+
+  .c-slide-character__title {
+    color: #efa009;
+  }
+
+  .c-card-character {
+    .c-card-character__label {
+      color: #ffd363;
+    }
+  }
+
+  .c-list-skills {
+    .c-list-skills__item-title {
+      color: #efa009;
+    }
+  }
+
+  .c-slider-skills {
+    .c-slider-skills__pagination {
+      .swiper-pagination-bullet {
+        background-color: #ffd363;
+      }
+    }
+  }
+
+  @include desktop {
+    .c-card-character {
+      .c-card-character__wrapper {
+        --border-color: #ffd363;
+        background-color: rgba(#3d2208, 0.27);
+
+        &::before,
+        &::after {
+          border-color: #ffd363;
+          background-color: rgba(#3d2208, 0.27);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .c-card-character {
+      --border-color: #ffd363;
+      background-color: rgba(#3d2208, 0.27);
+
+      &::before,
+      &::after {
+        border-color: #ffd363;
+        background-color: rgba(#3d2208, 0.27);
+      }
+    }
+  }
+}
+
+.c-slide-character.is-buu {
+  &::before {
+    background-color: #f618c6;
+  }
+
+  .c-slide-character__title {
+    color: #fa9eff;
+  }
+
+  .c-card-character {
+    .c-card-character__label {
+      color: #fa9eff;
+    }
+  }
+
+  .c-list-skills {
+    .c-list-skills__item-title {
+      color: #fa9eff;
+    }
+  }
+
+  .c-slider-skills {
+    .c-slider-skills__pagination {
+      .swiper-pagination-bullet {
+        background-color: #fa9eff;
+      }
+    }
+  }
+
+  @include desktop {
+    .c-card-character {
+      .c-card-character__wrapper {
+        --border-color: #fa9eff;
+        background-color: rgba(#3d2208, 0.27);
+
+        &::before,
+        &::after {
+          border-color: #fa9eff;
+          background-color: rgba(#3d2208, 0.27);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .c-card-character {
+      --border-color: #fa9eff;
+      background-color: rgba(#3d2208, 0.27);
+
+      &::before,
+      &::after {
+        border-color: #fa9eff;
+        background-color: rgba(#3d2208, 0.27);
+      }
+    }
+  }
+}
+
 .c-slider-skills {
   .c-slider-skills__pagination {
     height: auto;
@@ -86,7 +222,7 @@
       padding: 0;
       flex: 0 0 auto;
       border-radius: 0;
-      background-color: #ffd363;
+      background-color: #fff;
       opacity: 0.5;
       transition: 0.5s ease;
     }
@@ -98,8 +234,6 @@
   }
 
   @include desktop {
-    .c-slider-skills__viewport {}
-
     .c-slider-skills__pagination {
       margin-top: 0.45rem;
       gap: .18rem;

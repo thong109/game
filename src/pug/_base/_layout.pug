@@ -17,7 +17,7 @@ mixin tabCommonNews(data)
         span.c-tab-news__entry-label Hướng dẫn
 
 mixin cardCommonCharacter(data)
-  .c-card-character&attributes(attributes)
+  .c-card-character.js-border-polygon&attributes(attributes)
     ul.c-card-character__viewport
       each item in data
         li.c-card-character__wrapper.js-border-polygon&attributes(item.attributes)
@@ -28,7 +28,7 @@ mixin cardCommonCharacter(data)
                 p!=item.detail
 
 mixin slideCommonCharacter(data)
-  .c-slide-character.swiper-slide&attributes(attributes)
+  .c-slide-character.js-border-polygon.swiper-slide&attributes(attributes)
     .c-slide-character__viewport
       .c-slide-character__toggle.u-display-sp.js-tab__toggle(data-tab-id="slide-character-"+data.id)
         span.c-icon-helper

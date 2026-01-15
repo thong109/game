@@ -350,10 +350,10 @@
         speed: 500,
         slidesPerView: 1,
         spaceBetween: 0,
-        watchOverflow: true,
-        preventClicks: true,
-        preventClicksPropagation: true,
-        allowTouchMove: false,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true
+        },
         navigation: {
           nextEl: container.querySelector(".js-slider-simple__arrow.swiper-button-next"),
           prevEl: container.querySelector(".js-slider-simple__arrow.swiper-button-prev"),
@@ -416,9 +416,6 @@
         centeredSlides: true,
         spaceBetween: 0,
         watchOverflow: true,
-        preventClicks: true,
-        preventClicksPropagation: true,
-        allowTouchMove: false,
         navigation: {
           nextEl: container.querySelector(".js-slider-gameplay__arrow.swiper-button-next"),
           prevEl: container.querySelector(".js-slider-gameplay__arrow.swiper-button-prev"),
