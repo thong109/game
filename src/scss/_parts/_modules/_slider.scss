@@ -77,9 +77,41 @@
     display: flex;
     position: relative;
     justify-content: center;
+    text-align: center;
+
+    .swiper-pagination-bullet {
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      flex: 0 0 auto;
+      border-radius: 0;
+      background-color: #ffd363;
+      opacity: 0.5;
+      transition: 0.5s ease;
+    }
+
+    .swiper-pagination-bullet:hover,
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      opacity: 1;
+    }
   }
 
   @include desktop {
     .c-slider-skills__viewport {}
+
+    .c-slider-skills__pagination {
+      margin-top: 0.45rem;
+      gap: .18rem;
+      font-size: .2rem;
+      font-weight: calc(25 / 20);
+
+      .swiper-pagination-bullet {
+        min-width: 0.4rem;
+        min-height: 0.4rem;
+        padding: 0.05rem;
+        border-radius: 0.15rem;
+      }
+    }
   }
 }

@@ -114,11 +114,48 @@
 
   .c-list-skills__item {
     display: flex;
+    align-items: center;
   }
 
   .c-list-skills__item-icon {
     flex: 0 0 auto;
     position: relative;
+  }
+
+  .c-list-skills__icon-wrapper {
+    padding-top: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    &::before {
+      border-radius: 50%;
+      box-shadow: inset 0 0.04rem .1rem 0.05rem rgba(0, 0, 0, 0.25);
+      z-index: 1;
+    }
+
+    &::after {
+      background: linear-gradient(to bottom, #ffd363, #efa009) 50% 50% / 100% 100% no-repeat;
+      mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><circle cx='50' cy='50' r='50' fill='000'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><circle cx='50' cy='50' r='50' fill='000'/></svg>");
+      mask-composite: subtract;
+      mask-position: 50% 50%, 50% 50%;
+      mask-repeat: no-repeat, no-repeat;
+      z-index: 2;
+    }
+
+    .u-object {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
   }
 
   .c-list-skills__item-title {
@@ -136,9 +173,20 @@
 
   @include desktop {
     padding: 0 calc((100% - 3.46rem) / 2);
+    gap: 0.42rem;
+
+    .c-list-skills__item {
+      gap: .22rem;
+    }
 
     .c-list-skills__item-icon {
       width: 1.03rem;
+    }
+
+    .c-list-skills__icon-wrapper {
+      &::after {
+        mask-size: 100% 100%, calc(100% - 0.08rem) calc(100% - 0.08rem);
+      }
     }
 
     .c-list-skills__item-title {

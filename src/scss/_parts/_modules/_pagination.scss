@@ -181,6 +181,7 @@
     transition: background 0.5s ease, opacity 0.5s ease;
   }
 
+  .swiper-pagination-bullet:hover,
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #ffd363;
     opacity: 1;
