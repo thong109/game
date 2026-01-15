@@ -496,29 +496,6 @@
     transform: scale(-1, 1);
   }
 
-  .p-slider-top-gameplay__pagination {
-    height: auto;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-
-    .swiper-pagination-bullet {
-      margin: 0;
-      padding: 0;
-      flex: 0 0 auto;
-      border-radius: 0;
-      background-color: #9f9f9f;
-      opacity: 0.5;
-      transition: background 0.5s ease, opacity 0.5s ease;
-    }
-
-    .swiper-pagination-bullet.swiper-pagination-bullet-active {
-      background-color: #ffd363;
-      opacity: 1;
-    }
-  }
-
   @include desktop {
     .p-slider-top-gameplay__viewport {
       padding-bottom: 0.53rem;
@@ -553,16 +530,6 @@
 
     .p-slider-top-gameplay__arrow.swiper-button-next {
       right: calc(50% - 6.41rem);
-    }
-
-    .p-slider-top-gameplay__pagination {
-      gap: 0.15rem;
-      bottom: 0;
-
-      .swiper-pagination-bullet {
-        width: 0.63rem;
-        height: 0.11rem;
-      }
     }
   }
 
@@ -601,16 +568,6 @@
     .p-slider-top-gameplay__arrow.swiper-button-next {
       right: 0.12rem;
     }
-
-    .p-slider-top-gameplay__pagination {
-      gap: 0.04rem;
-      bottom: 0;
-
-      .swiper-pagination-bullet {
-        width: 0.15rem;
-        height: 0.02rem;
-      }
-    }
   }
 }
 
@@ -618,7 +575,7 @@
   margin: 0;
   padding: 0;
   border-radius: 50%;
-  background: #efa009 url(../resources/images/top/icon_arrow_02.svg) 50% 50% / auto auto no-repeat;
+  background: #efa009 url(../resources/images/top/icon_arrow_02.svg) 62% 50% / auto auto no-repeat;
   display: block;
   position: absolute;
   z-index: 1;
@@ -630,7 +587,24 @@
     top: calc(50% - 1.13rem / 2);
     left: calc(50% - 1.13rem / 2);
     background-size: 0.47rem auto;
-    background-position: 62% 50%;
+  }
+
+  @include mobile {
+    width: 0.38rem;
+    height: 0.38rem;
+    top: calc(50% - 0.38rem / 2);
+    left: calc(50% - 0.38rem / 2);
+    background-size: 0.16rem auto;
+  }
+}
+
+.p-section-top-about {
+  @include desktop {
+    margin-bottom: 0.13rem;
+  }
+
+  @include mobile {
+    margin-bottom: 0.04rem;
   }
 }
 

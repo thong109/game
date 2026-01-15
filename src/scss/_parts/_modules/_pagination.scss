@@ -160,3 +160,45 @@
     justify-content: flex-start;
   }
 }
+
+.c-pagination-sliding {
+  height: auto;
+  margin: 0;
+  bottom: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  .swiper-pagination-bullet {
+    margin: 0;
+    padding: 0;
+    flex: 0 0 auto;
+    border-radius: 0;
+    background-color: #9f9f9f;
+    opacity: 0.5;
+    transition: background 0.5s ease, opacity 0.5s ease;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #ffd363;
+    opacity: 1;
+  }
+
+  @include desktop {
+    gap: 0.15rem;
+
+    .swiper-pagination-bullet {
+      width: 0.63rem;
+      height: 0.11rem;
+    }
+  }
+
+  @include mobile {
+    gap: 0.04rem;
+
+    .swiper-pagination-bullet {
+      width: 0.15rem;
+      height: 0.02rem;
+    }
+  }
+}
