@@ -7,6 +7,7 @@
 @use "_parts/main";
 @use "_parts/footer";
 @use "_parts/_modules/breadcrumb";
+@use "_parts/_modules/card";
 @use "_parts/_modules/filters";
 @use "_parts/_modules/form";
 @use "_parts/_modules/frame";
@@ -16,6 +17,7 @@
 @use "_parts/_modules/properties";
 @use "_parts/_modules/section";
 @use "_parts/_modules/single";
+@use "_parts/_modules/slider";
 @use "_parts/_modules/tab";
 @use "_parts/_modules/title";
 @use "_top";

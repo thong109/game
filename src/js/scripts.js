@@ -210,12 +210,67 @@
     });
   };
 
+  const sliderSimple = () => {
+    const sliders = document.querySelectorAll(".js-slider-simple");
+    if (!sliders.length) return;
+
+    sliders.forEach((container) => {
+      const slider = container.querySelectorAll(".swiper")[0];
+
+      new Swiper(slider, {
+        loop: false,
+        speed: 500,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        watchOverflow: true,
+        preventClicks: true,
+        preventClicksPropagation: true,
+        allowTouchMove: false,
+        navigation: {
+          nextEl: container.querySelector(".swiper-button-next"),
+          prevEl: container.querySelector(".swiper-button-prev"),
+        },
+        pagination: {
+          el: container.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+      });
+    });
+  }
+
+  const sliderNumbered = () => {
+    const sliders = document.querySelectorAll(".js-slider-numbered");
+    if (!sliders.length) return;
+
+    sliders.forEach((container) => {
+      const slider = container.querySelectorAll(".swiper")[0];
+
+      new Swiper(slider, {
+        loop: true,
+        speed: 500,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: container.querySelector(".swiper-button-next"),
+          prevEl: container.querySelector(".swiper-button-prev"),
+        },
+        pagination: {
+          el: container.querySelector(".swiper-pagination"),
+          clickable: true,
+          renderBullet: (index, className) => {
+            return `<span class="${className}">${index + 1}</span>`;
+          },
+        },
+      });
+    });
+  }
+
   const sliderGameplay = () => {
     const sliders = document.querySelectorAll(".js-slider-gameplay");
     if (!sliders.length) return;
 
     sliders.forEach((container) => {
-      const slider = container.querySelector(".swiper");
+      const slider = container.querySelectorAll(".swiper")[0];
       const wrapper = slider.querySelector(".swiper-wrapper");
       const slides = wrapper.children;
 
@@ -279,5 +334,7 @@
   triggerClick();
   triggerTab();
   effectEyesFollow();
+  sliderSimple();
+  sliderNumbered();
   sliderGameplay();
 })();

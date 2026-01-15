@@ -79,14 +79,96 @@ block content
   section.p-section-top-about
     h2.c-title-primary.is-align-left
       span.c-title-primary__wrapper Giới thiệu nhân vật
-    .u-wrapper
-
+    .c-slider-character.js-slider-simple
+      .c-slider-character__viewport.swiper
+        .c-slider-character__wrapper.swiper-wrapper
+          +slideCommonCharacter({
+            id: "01",
+            cardCharacter: [
+              {attributes: {class: "is-overview"}, label: "Khái quát", detail: "Gukku nổi bật với bộ kỹ năng tiếp cận mạnh mẽ, sát thương vật lý vượt trội, giúp cậu trở thành chiến binh trâu bò hàng đầu trong mọi trận chiến"},
+              {attributes: {class: "is-style"}, label: "Lối chơi", detail: "Nhân vật này thuộc thể loại đấu sĩ với sức mạnh bền bỉ với nguốn sát thương lớn"},
+            ],
+            sliderSkills: [
+              [
+                {icon: {src: imgCommonPC+"icon_skills_01_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_01_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_01_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+              [
+                {icon: {src: imgCommonPC+"icon_skills_01_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_01_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_01_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+              [
+                {icon: {src: imgCommonPC+"icon_skills_01_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_01_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_01_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+            ],
+            thumbnail: {src: imgCommonPC+"visual_character_01.png", alt: ""},
+            title: "Goku",
+          })
+          +slideCommonCharacter({
+            id: "01",
+            cardCharacter: [
+              {attributes: {class: "is-overview"}, label: "Khái quát", detail: "Sinh vật kỳ dị với hình dáng ngây thơ nhưng ẩn chứa sức mạnh hủy diệt. Majbbu sở hữu khả năng gây sát thương năng lượng khổng lồ, có thể tái tạo và hồi phục nhanh chóng, thậm chí biến mọi kẻ thù thành hình dạng quái dị"},
+              {attributes: {class: "is-style"}, label: "Lối chơi", detail: "Nhân vật này thuộc thể loại đấu sĩ với sức mạnh bền bỉ với nguốn sát thương lớn"},
+            ],
+            sliderSkills: [
+              [
+                {icon: {src: imgCommonPC+"icon_skills_02_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_02_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_02_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+              [
+                {icon: {src: imgCommonPC+"icon_skills_02_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_02_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_02_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+              [
+                {icon: {src: imgCommonPC+"icon_skills_02_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_02_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_02_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+            ],
+            thumbnail: {src: imgCommonPC+"visual_character_02.png", alt: ""},
+            title: "Buu",
+          })
+          +slideCommonCharacter({
+            id: "01",
+            cardCharacter: [
+              {attributes: {class: "is-overview"}, label: "Khái quát", detail: "Sinh vật nhân tạo được tạo ra từ tế bào của những chiến binh mạnh nhất vũ trụ. Cellion mang trong mình sức mạnh sát thương vật lý khủng khiếp, kết hợp với bộ kỹ năng tiến hóa bậc nhất có thể nghiền nát cả hành tinh"},
+              {attributes: {class: "is-style"}, label: "Lối chơi", detail: "Nhân vật này thuộc thể loại đấu sĩ với sức mạnh bền bỉ với nguốn sát thương lớn"},
+            ],
+            sliderSkills: [
+              [
+                {icon: {src: imgCommonPC+"icon_skills_03_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_03_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_03_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+              [
+                {icon: {src: imgCommonPC+"icon_skills_03_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_03_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_03_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+              [
+                {icon: {src: imgCommonPC+"icon_skills_03_01.png", alt: "", caption: "1"}, title: {tag: "span", content: "Kamehame"}, description: "Là đòn tích tụ và phóng ra luồng năng lượng cực mạnh từ hai bàn tay"},
+                {icon: {src: imgCommonPC+"icon_skills_03_02.png", alt: "", caption: "2"}, title: {tag: "span", content: "Soaring Fist"}, description: "Người sử dúng áp sát rồi tùng lắm đấm tiêu diệt kẻ thù"},
+                {icon: {src: imgCommonPC+"icon_skills_03_03.png", alt: "", caption: "3"}, title: {tag: "span", content: "Great Ape"}, description: "Goku hoá thành khỉ đột tăng 1 lượng lớn sức mạnh cho bản thân"},
+              ],
+            ],
+            thumbnail: {src: imgCommonPC+"visual_character_03.png", alt: ""},
+            title: "Cell",
+          })
+        .c-slider-character__arrow.u-effect-hover.swiper-button-prev
+        .c-slider-character__arrow.u-effect-hover.swiper-button-next
+        .c-pagination-sliding.swiper-pagination
   section.p-section-top-news
     h2.c-title-primary.is-align-right
       span.c-title-primary__wrapper Tin tức 
     +tabCommonNews()
     .u-wrapper
-      .c-frame-tabbing.is-tab-active.js-tab__target(data-tab-id="tab-category tab-category-event")
+      .c-frame-tabbing.is-tab-active.js-tab__target(data-tab-id="tab-news tab-news-event")
         .c-frame-tabbing__wrapper
           +filtersCommonNews({id: "event"})
           +listCommonNews([
@@ -116,7 +198,7 @@ block content
             },
           ])
           +paginationCommon().is-neartitle
-      .c-frame-tabbing.js-tab__target(data-tab-id="tab-category tab-category-activity")
+      .c-frame-tabbing.js-tab__target(data-tab-id="tab-news tab-news-activity")
         .c-frame-tabbing__wrapper
           +filtersCommonNews({id: "activity"})
           +listCommonNews([
@@ -146,7 +228,7 @@ block content
             },
           ])
           +paginationCommon().is-neartitle
-      .c-frame-tabbing.js-tab__target(data-tab-id="tab-category tab-category-tutorial")
+      .c-frame-tabbing.js-tab__target(data-tab-id="tab-news tab-news-tutorial")
         .c-frame-tabbing__wrapper
           +filtersCommonNews({id: "tutorial"})
           +listCommonNews([

@@ -1,0 +1,59 @@
+@charset "utf-8";
+@use "../../_base/base" as *;
+
+.c-slide-character {
+  color: #fff;
+  font-family: "Oxanium", sans-serif;
+
+  .c-slide-character__viewport {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .c-slide-character__thumbnail {
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .c-slide-character__thumbnail-wrapper {
+    padding-top: calc(600 / 400 * 100%);
+    position: relative;
+
+    .u-object {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .c-slide-character__title {
+    margin: 0;
+    display: block;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  @include desktop {
+    .c-slide-character__wrapper {
+      order: 2;
+    }
+
+    .c-slide-character__thumbnail {
+      width: 4rem;
+    }
+
+    .c-slide-character__title {
+      font-size: 0.63rem;
+      line-height: calc(79 / 63);
+    }
+
+    .c-frame-tabbing {
+      display: block;
+      order: 1;
+    }
+
+    .c-card-character.is-standalone {
+      order: 3;
+    }
+  }
+}

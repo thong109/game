@@ -1,0 +1,10 @@
+@charset "utf-8";
+@use "../../_base/base" as *;
+
+.c-card-character {
+  flex: 0 0 auto;
+
+  @include desktop {
+    width: 4.26rem;
+  }
+}

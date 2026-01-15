@@ -599,11 +599,11 @@
 }
 
 .p-section-top-about {
-  background-color: rgba(0, 0, 0, 0.9);
 
   @include desktop {
     margin-bottom: 0.13rem;
     padding: 0.24rem 0 0.62rem;
+    background: url(../resources/images/common/background_character_01.jpg) 50% 50% / cover no-repeat;
   }
 
   @include mobile {
