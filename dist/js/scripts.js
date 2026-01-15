@@ -236,14 +236,6 @@
         preventClicks: true,
         preventClicksPropagation: true,
         allowTouchMove: false,
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: "auto",
-          },
-        },
         navigation: {
           nextEl: container.querySelector(".swiper-button-next"),
           prevEl: container.querySelector(".swiper-button-prev"),
