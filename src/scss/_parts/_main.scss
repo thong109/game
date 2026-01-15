@@ -15,5 +15,11 @@
 
   @include mobile {
     background: #fff url(../resources/images/common/sp/background_page_01.svg) 100% 0% / 3.64rem auto no-repeat;
+
+    html.is-page-top & {
+      background: url(../resources/images/common/sp/background_page_03.svg) calc(50% - 1.88rem) calc(100% - 3.78rem) / 5.23rem auto no-repeat,
+        url(../resources/images/common/sp/background_page_03.svg) calc(50% + 0.68rem) calc(100% - 1.24rem) / 5.23rem auto no-repeat;
+      background-color: #fff;
+    }
   }
 }
