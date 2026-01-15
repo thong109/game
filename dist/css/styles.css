@@ -598,21 +598,21 @@ html.is-touchable .u-effect-hover:hover {
   font-weight: 600;
   line-height: 1.2777777778;
   color: #000;
-  clip-path: polygon(0.18rem 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0% 0.18rem);
+  clip-path: polygon(0.18rem 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0 0.18rem);
 }
 .l-button-header-login::before {
   content: "";
   position: absolute;
   inset: 1px;
   z-index: 0;
-  clip-path: polygon(0.18rem 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0% 0.18rem);
+  clip-path: polygon(0.18rem 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0 0.18rem);
 }
 .l-button-header-login .l-button-header-login__wrapper {
   flex: 1 1 0;
   background: url(../resources/images/common/mask_radial_01.png) 50% 50%/100% 100% no-repeat;
   position: relative;
   z-index: 1;
-  clip-path: polygon(0.15rem 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0% 0.15rem);
+  clip-path: polygon(0.15rem 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0 0.15rem);
 }
 .l-button-header-login .l-button-header-login__wrapper::before {
   content: "";
@@ -620,7 +620,7 @@ html.is-touchable .u-effect-hover:hover {
   position: absolute;
   inset: 0;
   z-index: 0;
-  clip-path: polygon(0.15rem 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0% 0.15rem);
+  clip-path: polygon(0.15rem 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0 0.15rem);
 }
 .l-button-header-login .l-button-header-login__label {
   position: relative;
@@ -1006,10 +1006,94 @@ html.is-page-top .l-footer-common::before {
 
 .c-card-character {
   flex: 0 0 auto;
+  position: relative;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 500;
+}
+.c-card-character .c-card-character__viewport,
+.c-card-character .c-card-character__wrapper,
+.c-card-character .c-card-character__inner,
+.c-card-character .c-card-character__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.c-card-character .c-card-character__inner {
+  z-index: 2;
+  flex: 1 1 auto;
+}
+.c-card-character .c-card-character__label {
+  margin: 0;
+  display: block;
+  text-align: center;
+  color: #ffd363;
+}
+.c-card-character .c-card-character__content {
+  justify-content: center;
+  flex: 1 1 auto;
+}
+.c-card-character .c-card-character__content-detail p {
+  margin: 0;
 }
 @media print, (min-width: 768px) {
   .c-card-character {
-    width: 4.26rem;
+    width: 4.3rem;
+  }
+  .c-card-character .c-card-character__viewport {
+    gap: 0.4rem;
+  }
+  .c-card-character .c-card-character__wrapper {
+    --cut-size: 0.41rem 0 0.41rem 0;
+    --border-width: 0.05rem;
+    --border-color: #ffd363;
+    --border-type: inner;
+    clip-path: polygon(0.41rem 0, 100% 0, 100% calc(100% - 0.41rem), calc(100% - 0.41rem) 100%, 0 100%, 0 0.41rem);
+    background-color: rgba(61, 34, 8, 0.27);
+  }
+  .c-card-character .c-card-character__wrapper::before, .c-card-character .c-card-character__wrapper::after {
+    content: "";
+    width: 1.06rem;
+    height: 1.19rem;
+    border-width: 0.03rem 0.03rem 0 0;
+    border-style: solid;
+    border-color: #ffd363;
+    background-color: rgba(61, 34, 8, 0.27);
+    position: absolute;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+  .c-card-character .c-card-character__wrapper::before {
+    top: 0.22rem;
+    right: 0.22rem;
+  }
+  .c-card-character .c-card-character__wrapper::after {
+    bottom: 0.22rem;
+    left: 0.22rem;
+    transform: scale(-1, -1);
+  }
+  .c-card-character .c-card-character__wrapper.is-overview {
+    min-height: 4.54rem;
+  }
+  .c-card-character .c-card-character__wrapper.is-overview .c-card-character__content-detail {
+    padding-bottom: 16.5714285714%;
+  }
+  .c-card-character .c-card-character__wrapper.is-style {
+    min-height: 2.27rem;
+  }
+  .c-card-character .c-card-character__wrapper.is-style .c-card-character__content {
+    justify-content: flex-start;
+  }
+  .c-card-character .c-card-character__inner {
+    padding: 0.21rem calc((100% - 3.5rem) / 2) 0.48rem;
+  }
+  .c-card-character .c-card-character__label {
+    margin-bottom: 0.23rem;
+    font-size: 0.32rem;
+    line-height: 1.25;
+  }
+  .c-card-character .c-card-character__content-detail {
+    font-size: 0.2rem;
+    line-height: 1.25;
   }
 }
 
@@ -1844,6 +1928,9 @@ html.is-page-top .l-footer-common::before {
   text-align: center;
 }
 @media print, (min-width: 768px) {
+  .c-slide-character {
+    padding: 0.95rem 0.92rem 0;
+  }
   .c-slide-character .c-slide-character__wrapper {
     order: 2;
   }
@@ -2291,12 +2378,12 @@ html.is-page-top .l-footer-common::before {
     left: 0.04rem;
   }
   .p-button-top-system .p-button-system__shadow::before {
-    clip-path: polygon(0.13rem 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0% 0.13rem);
+    clip-path: polygon(0.13rem 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0 0.13rem);
   }
   .p-button-top-system .p-button-top-system__wrapper {
     min-height: 0.78rem;
     padding: 0.05rem 0.13rem;
-    clip-path: polygon(0.13rem 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0% 0.13rem);
+    clip-path: polygon(0.13rem 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0 0.13rem);
     gap: 0.16rem;
   }
   .p-button-top-system .p-button-top-system__icon {
@@ -2321,12 +2408,12 @@ html.is-page-top .l-footer-common::before {
     left: 0.02rem;
   }
   .p-button-top-system .p-button-system__shadow::before {
-    clip-path: polygon(0.07rem 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0% 0.07rem);
+    clip-path: polygon(0.07rem 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0 0.07rem);
   }
   .p-button-top-system .p-button-top-system__wrapper {
     min-height: 0.35rem;
     padding: 0.02rem 0.11rem;
-    clip-path: polygon(0.07rem 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0% 0.07rem);
+    clip-path: polygon(0.07rem 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0 0.07rem);
     gap: 0.09rem;
   }
   .p-button-top-system .p-button-top-system__icon {
@@ -2629,4 +2716,12 @@ html.is-page-top .l-footer-common::before {
   .p-section-top-gameplay .c-title-primary {
     margin-bottom: 0.14rem;
   }
+}
+
+.c-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }

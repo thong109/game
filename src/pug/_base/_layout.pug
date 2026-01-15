@@ -20,7 +20,7 @@ mixin cardCommonCharacter(data)
   .c-card-character&attributes(attributes)
     ul.c-card-character__viewport
       each item in data
-        li.c-card-character__wrapper&attributes(item.attributes)
+        li.c-card-character__wrapper.js-border-polygon&attributes(item.attributes)
           .c-card-character__inner
             span.c-card-character__label!=item.label
             .c-card-character__content
@@ -38,8 +38,8 @@ mixin slideCommonCharacter(data)
         .c-frame-tabbing__wrapper
           +cardCommonCharacter(data.cardCharacter)
       .c-card-character.is-standalone
-        .c-card-character__viewport
-          .c-card-character__wrapper.is-skills
+        ul.c-card-character__viewport
+          li.c-card-character__wrapper.is-skills.js-border-polygon
             .c-card-character__inner
               span.c-card-character__label Skills
               .c-card-character__content

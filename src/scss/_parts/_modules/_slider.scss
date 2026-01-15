@@ -34,6 +34,8 @@
   }
 
   @include desktop {
+    padding: 0.95rem 0.92rem 0;
+
     .c-slide-character__wrapper {
       order: 2;
     }

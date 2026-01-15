@@ -13,19 +13,19 @@
 
       html.classList.toggle(
         "is-browser-chrome",
-        userAgent.includes("chrome") && !userAgent.includes("edg/"),
+        userAgent.includes("chrome") && !userAgent.includes("edg/")
       );
       html.classList.toggle(
         "is-browser-safari",
-        userAgent.includes("safari") && !userAgent.includes("chrome"),
+        userAgent.includes("safari") && !userAgent.includes("chrome")
       );
       html.classList.toggle(
         "is-browser-firefox",
-        userAgent.includes("firefox"),
+        userAgent.includes("firefox")
       );
       html.classList.toggle(
         "is-browser-ie",
-        userAgent.includes("msie ") || userAgent.includes("trident/"),
+        userAgent.includes("msie ") || userAgent.includes("trident/")
       );
       html.classList.toggle("is-browser-edge", userAgent.includes("edg/"));
     };
@@ -33,7 +33,7 @@
     const viewport = document.querySelector('meta[name="viewport"]');
     viewport?.setAttribute(
       "content",
-      "width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0",
+      "width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"
     );
 
     window.addEventListener("load", init);
@@ -56,7 +56,7 @@
       html.classList.toggle("is-device-ipad", /ipad/.test(userAgent));
       html.classList.toggle(
         "is-device-ios",
-        /(iphone|ipod|ipad)/.test(userAgent),
+        /(iphone|ipod|ipad)/.test(userAgent)
       );
       html.classList.toggle("is-device-android", userAgent.includes("android"));
 
@@ -84,12 +84,12 @@
         if (window.screen.width < mobileXSBreak) {
           viewport?.setAttribute(
             "content",
-            `width=${mobileXSBreak}, user-scalable=0`,
+            `width=${mobileXSBreak}, user-scalable=0`
           );
         } else {
           viewport?.setAttribute(
             "content",
-            "width=device-width, initial-scale=1",
+            "width=device-width, initial-scale=1"
           );
         }
         html.classList.add("is-device-mobile");
@@ -112,7 +112,7 @@
 
         viewport?.setAttribute(
           "content",
-          "width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0",
+          "width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"
         );
       }
     };
@@ -154,7 +154,8 @@
 
     if (!toggles.length) return;
 
-    const parseIds = (el) => (el.getAttribute("data-tab-id") || "").split(" ").filter(Boolean);
+    const parseIds = (el) =>
+      (el.getAttribute("data-tab-id") || "").split(" ").filter(Boolean);
     toggles.forEach((toggle) => {
       const toggleIds = parseIds(toggle);
       const groupId = toggleIds[0];
@@ -210,6 +211,134 @@
     });
   };
 
+  const borderPolygon = () => {
+    const targets = document.querySelectorAll(".js-border-polygon");
+    if (!targets.length) return;
+
+    const resolveToPx = (value, target, axis = "x") => {
+      if (!value) return 0;
+      if (value.endsWith("px")) return parseFloat(value);
+
+      if (value.endsWith("%")) {
+        const percent = parseFloat(value) / 100;
+        const { width, height } = target.getBoundingClientRect();
+        return axis === "y" ? percent * height : percent * width;
+      }
+
+      const probe = document.createElement("div");
+      probe.style.position = "absolute";
+      probe.style.visibility = "hidden";
+      probe.style.width = value;
+
+      target.appendChild(probe);
+      const px = probe.getBoundingClientRect().width;
+      probe.remove();
+
+      return px;
+    };
+
+    const parseCutSizes = (value, target) => {
+      if (!value) return [0, 0, 0, 0];
+
+      const parts = value.split(/\s+/).map((v) => resolveToPx(v, target));
+
+      switch (parts.length) {
+        case 1:
+          return [parts[0], parts[0], parts[0], parts[0]];
+        case 2:
+          return [parts[0], parts[1], parts[0], parts[1]];
+        case 3:
+          return [parts[0], parts[1], parts[2], parts[1]];
+        case 4:
+          return parts;
+        default:
+          return [0, 0, 0, 0];
+      }
+    };
+
+    const draw = (target) => {
+      const styles = getComputedStyle(target);
+
+      const borderWidth = resolveToPx(
+        styles.getPropertyValue("--border-width"),
+        target
+      );
+
+      const borderColor =
+        styles.getPropertyValue("--border-color").trim() || "#000";
+
+      const borderType =
+        styles.getPropertyValue("--border-type").trim() || "center";
+
+      const [cutTLSize, cutTRSize, cutBRSize, cutBLSize] = parseCutSizes(
+        styles.getPropertyValue("--cut-size"),
+        target
+      );
+
+      const inset = borderType === "inner" ? borderWidth / 2 : 0;
+
+      let canvas = target.querySelector("canvas");
+      if (!canvas) {
+        canvas = document.createElement("canvas");
+        canvas.classList.add("c-canvas");
+        target.prepend(canvas);
+      }
+
+      const ctx = canvas.getContext("2d");
+      const { width, height } = target.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+
+      ctx.strokeStyle = borderColor;
+      ctx.lineWidth = borderWidth;
+      ctx.lineJoin = "miter";
+      ctx.lineCap = "butt";
+
+      ctx.beginPath();
+      ctx.moveTo(cutTLSize + inset, inset);
+      ctx.lineTo(width - cutTRSize - inset, inset);
+
+      if (cutTRSize > 0) {
+        ctx.lineTo(width - inset, cutTRSize + inset);
+      }
+
+      ctx.lineTo(width - inset, height - cutBRSize - inset);
+
+      if (cutBRSize > 0) {
+        ctx.lineTo(width - cutBRSize - inset, height - inset);
+      }
+
+      ctx.lineTo(cutBLSize + inset, height - inset);
+
+      if (cutBLSize > 0) {
+        ctx.lineTo(inset, height - cutBLSize - inset);
+      }
+
+      ctx.lineTo(inset, cutTLSize + inset);
+      ctx.closePath();
+      ctx.stroke();
+    };
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        draw(entry.target);
+      }
+    });
+
+    targets.forEach((target) => {
+      draw(target);
+      observer.observe(target);
+    });
+  };
+
+
   const sliderSimple = () => {
     const sliders = document.querySelectorAll(".js-slider-simple");
     if (!sliders.length) return;
@@ -236,7 +365,7 @@
         },
       });
     });
-  }
+  };
 
   const sliderNumbered = () => {
     const sliders = document.querySelectorAll(".js-slider-numbered");
@@ -263,7 +392,7 @@
         },
       });
     });
-  }
+  };
 
   const sliderGameplay = () => {
     const sliders = document.querySelectorAll(".js-slider-gameplay");
@@ -301,11 +430,18 @@
         },
       });
     });
-  }
+  };
 
   window.WebFontConfig = {
     custom: {
-      families: ["Rubik:n4,n5", "Poppins:n4,n5", "Inter:n4,n6,n7", "Sansation:n4,n7", "Oxanium:n4,n5,n6", "Bangers:n4"],
+      families: [
+        "Rubik:n4,n5",
+        "Poppins:n4,n5",
+        "Inter:n4,n6,n7",
+        "Sansation:n4,n7",
+        "Oxanium:n4,n5,n6",
+        "Bangers:n4",
+      ],
       urls: [
         "https://fonts.googleapis.com/css2" +
         "?family=Rubik:wght@400;500" +
@@ -314,7 +450,7 @@
         "&family=Sansation:wght@400;700" +
         "&family=Oxanium:wght@400;500;600" +
         "&family=Bangers:wght@400" +
-        "&display=swap"
+        "&display=swap",
       ],
     },
   };
@@ -334,6 +470,7 @@
   triggerClick();
   triggerTab();
   effectEyesFollow();
+  borderPolygon();
   sliderSimple();
   sliderNumbered();
   sliderGameplay();

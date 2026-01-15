@@ -284,13 +284,13 @@
     }
 
     .p-button-system__shadow::before {
-      clip-path: polygon(calc(.13rem) 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0% calc(.13rem));
+      clip-path: path-highlight(0.13rem);
     }
 
     .p-button-top-system__wrapper {
       min-height: .78rem;
       padding: 0.05rem 0.13rem;
-      clip-path: polygon(calc(.13rem) 0, 100% 0, 100% calc(100% - 0.13rem), calc(100% - 0.13rem) 100%, 0 100%, 0% calc(.13rem));
+      clip-path: path-highlight(0.13rem);
       gap: 0.16rem;
     }
 
@@ -321,13 +321,13 @@
     }
 
     .p-button-system__shadow::before {
-      clip-path: polygon(calc(.07rem) 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0% calc(.07rem));
+      clip-path: path-highlight(0.07rem);
     }
 
     .p-button-top-system__wrapper {
       min-height: .35rem;
       padding: 0.02rem 0.11rem;
-      clip-path: polygon(calc(.07rem) 0, 100% 0, 100% calc(100% - 0.07rem), calc(100% - 0.07rem) 100%, 0 100%, 0% calc(.07rem));
+      clip-path: path-highlight(0.07rem);
       gap: 0.09rem;
     }
 
@@ -599,7 +599,6 @@
 }
 
 .p-section-top-about {
-
   @include desktop {
     margin-bottom: 0.13rem;
     padding: 0.24rem 0 0.62rem;

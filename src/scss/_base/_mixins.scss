@@ -2,13 +2,17 @@
 @use "variables" as *;
 
 @mixin desktop-md {
-  @media print, (min-width: 1101px) {
+
+  @media print,
+  (min-width: 1101px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media print, (min-width: 768px) {
+
+  @media print,
+  (min-width: 768px) {
     @content;
   }
 }
@@ -95,4 +99,13 @@
   html.is-android & {
     font-weight: $fontweight-bold;
   }
+}
+
+@function path-highlight($borderCut) {
+  @return polygon(#{$borderCut} 0,
+    100% 0,
+    100% calc(100% - #{$borderCut}),
+    calc(100% - #{$borderCut}) 100%,
+    0 100%,
+    0 #{$borderCut});
 }

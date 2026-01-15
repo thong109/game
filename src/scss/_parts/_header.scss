@@ -195,14 +195,14 @@
   font-weight: 600;
   line-height: calc(23 / 18);
   color: #000;
-  clip-path: polygon(calc(.18rem) 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0% calc(.18rem));
+  clip-path: path-highlight(0.18rem);
 
   &::before {
     content: "";
     position: absolute;
     inset: 1px;
     z-index: 0;
-    clip-path: polygon(calc(.18rem) 0, 100% 0, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0 100%, 0% calc(.18rem));
+    clip-path: path-highlight(0.18rem);
   }
 
   .l-button-header-login__wrapper {
@@ -210,7 +210,7 @@
     background: url(../resources/images/common/mask_radial_01.png) 50% 50% / 100% 100% no-repeat;
     position: relative;
     z-index: 1;
-    clip-path: polygon(calc(.15rem) 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0% calc(.15rem));
+    clip-path: path-highlight(0.15rem);
 
     &::before {
       content: "";
@@ -218,7 +218,7 @@
       position: absolute;
       inset: 0;
       z-index: 0;
-      clip-path: polygon(calc(.15rem) 0, 100% 0, 100% calc(100% - 0.15rem), calc(100% - 0.15rem) 100%, 0 100%, 0% calc(.15rem));
+      clip-path: path-highlight(0.15rem);
     }
   }
 

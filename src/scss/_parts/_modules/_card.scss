@@ -3,8 +3,112 @@
 
 .c-card-character {
   flex: 0 0 auto;
+  position: relative;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 500;
+
+  .c-card-character__viewport,
+  .c-card-character__wrapper,
+  .c-card-character__inner,
+  .c-card-character__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .c-card-character__inner {
+    z-index: 2;
+    flex: 1 1 auto;
+  }
+
+  .c-card-character__label {
+    margin: 0;
+    display: block;
+    text-align: center;
+    color: #ffd363;
+  }
+
+  .c-card-character__content {
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  .c-card-character__content-detail {
+    p {
+      margin: 0;
+    }
+  }
 
   @include desktop {
-    width: 4.26rem;
+    width: 4.3rem;
+
+    .c-card-character__viewport {
+      gap: 0.4rem;
+    }
+
+    .c-card-character__wrapper {
+      --cut-size: 0.41rem 0 0.41rem 0;
+      --border-width: 0.05rem;
+      --border-color: #ffd363;
+      --border-type: inner;
+      clip-path: path-highlight(0.41rem);
+      background-color: rgba(#3d2208, 0.27);
+
+      &::before,
+      &::after {
+        content: "";
+        width: 1.06rem;
+        height: 1.19rem;
+        border-width: 0.03rem 0.03rem 0 0;
+        border-style: solid;
+        border-color: #ffd363;
+        background-color: rgba(#3d2208, 0.27);
+        position: absolute;
+        clip-path: polygon(0 0, 100% 100%, 100% 0);
+      }
+
+      &::before {
+        top: 0.22rem;
+        right: 0.22rem;
+      }
+
+      &::after {
+        bottom: 0.22rem;
+        left: 0.22rem;
+        transform: scale(-1, -1);
+      }
+    }
+
+    .c-card-character__wrapper.is-overview {
+      min-height: 4.54rem;
+
+      .c-card-character__content-detail {
+        padding-bottom: calc(58 / 350 * 100%);
+      }
+    }
+
+    .c-card-character__wrapper.is-style {
+      min-height: 2.27rem;
+
+      .c-card-character__content {
+        justify-content: flex-start;
+      }
+    }
+
+    .c-card-character__inner {
+      padding: 0.21rem calc((100% - 3.5rem) / 2) 0.48rem;
+    }
+
+    .c-card-character__label {
+      margin-bottom: 0.23rem;
+      font-size: 0.32rem;
+      line-height: calc(40 / 32);
+    }
+
+    .c-card-character__content-detail {
+      font-size: 0.2rem;
+      line-height: calc(25 / 20);
+    }
   }
 }
