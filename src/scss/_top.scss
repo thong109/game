@@ -599,12 +599,16 @@
 }
 
 .p-section-top-about {
+  background-color: rgba(0, 0, 0, 0.9);
+
   @include desktop {
     margin-bottom: 0.13rem;
+    padding: 0.24rem 0 0.62rem;
   }
 
   @include mobile {
     margin-bottom: 0.04rem;
+    padding: 0.04rem 0 0.22rem;
   }
 }
 

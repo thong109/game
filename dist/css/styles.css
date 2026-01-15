@@ -1950,7 +1950,7 @@ html.is-page-top .l-footer-common::before {
   }
   .c-title-primary.is-align-right .c-title-primary__wrapper {
     padding-right: calc(50% - 6.97rem - 0.2rem);
-    padding-left: calc(50% + 2.97rem - 0.2rem);
+    padding-left: calc(50% + 1rem - 0.2rem);
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -1958,7 +1958,7 @@ html.is-page-top .l-footer-common::before {
     clip-path: polygon(0 0, calc(100% - 0.19rem) 0%, 100% 100%, 0% 100%);
   }
   .c-title-primary.is-align-right .c-title-primary__wrapper {
-    padding-left: calc(50% + 0.7rem - 0.1rem);
+    padding-left: calc(50% - 0.1rem);
   }
 }
 
@@ -1973,7 +1973,7 @@ html.is-page-top .l-footer-common::before {
     clip-path: polygon(0.58rem 0%, 100% 0, 100% 100%, 0% 100%);
   }
   .c-title-primary.is-align-left .c-title-primary__wrapper {
-    padding-right: calc(50% + 2.97rem - 0.2rem);
+    padding-right: calc(50% + 1rem - 0.2rem);
     padding-left: calc(50% - 6.97rem - 0.2rem);
   }
 }
@@ -1982,7 +1982,7 @@ html.is-page-top .l-footer-common::before {
     clip-path: polygon(0.19rem 0%, 100% 0, 100% 100%, 0% 100%);
   }
   .c-title-primary.is-align-left .c-title-primary__wrapper {
-    padding-right: calc(50% + 0.7rem - 0.2rem);
+    padding-right: calc(50% - 0.2rem);
   }
 }
 
@@ -2508,14 +2508,19 @@ html.is-page-top .l-footer-common::before {
   }
 }
 
+.p-section-top-about {
+  background-color: rgba(0, 0, 0, 0.9);
+}
 @media print, (min-width: 768px) {
   .p-section-top-about {
     margin-bottom: 0.13rem;
+    padding: 0.24rem 0 0.62rem;
   }
 }
 @media only screen and (max-width: 767.98px) {
   .p-section-top-about {
     margin-bottom: 0.04rem;
+    padding: 0.04rem 0 0.22rem;
   }
 }
 
