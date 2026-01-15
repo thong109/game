@@ -168,6 +168,8 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  position: relative !important;
+  inset: 0 !important;
 
   .swiper-pagination-bullet {
     margin: 0;
@@ -185,6 +187,7 @@
   }
 
   @include desktop {
+    margin-top: 0.42rem;
     gap: 0.15rem;
 
     .swiper-pagination-bullet {
@@ -194,6 +197,7 @@
   }
 
   @include mobile {
+    margin-top: 0.09rem;
     gap: 0.04rem;
 
     .swiper-pagination-bullet {

@@ -338,7 +338,6 @@
     });
   };
 
-
   const sliderSimple = () => {
     const sliders = document.querySelectorAll(".js-slider-simple");
     if (!sliders.length) return;
@@ -347,7 +346,7 @@
       const slider = container.querySelectorAll(".swiper")[0];
 
       new Swiper(slider, {
-        loop: false,
+        loop: true,
         speed: 500,
         slidesPerView: 1,
         spaceBetween: 0,
@@ -356,11 +355,11 @@
         preventClicksPropagation: true,
         allowTouchMove: false,
         navigation: {
-          nextEl: container.querySelector(".swiper-button-next"),
-          prevEl: container.querySelector(".swiper-button-prev"),
+          nextEl: container.querySelector(".js-slider-simple__arrow.swiper-button-next"),
+          prevEl: container.querySelector(".js-slider-simple__arrow.swiper-button-prev"),
         },
         pagination: {
-          el: container.querySelector(".swiper-pagination"),
+          el: container.querySelector(".js-slider-simple__pagination"),
           clickable: true,
         },
       });
@@ -380,11 +379,11 @@
         slidesPerView: 1,
         spaceBetween: 0,
         navigation: {
-          nextEl: container.querySelector(".swiper-button-next"),
-          prevEl: container.querySelector(".swiper-button-prev"),
+          nextEl: container.querySelector(".js-slider-numbered__arrow.swiper-button-next"),
+          prevEl: container.querySelector(".js-slider-numbered__arrow.swiper-button-prev"),
         },
         pagination: {
-          el: container.querySelector(".swiper-pagination"),
+          el: container.querySelector(".js-slider-numbered__pagination"),
           clickable: true,
           renderBullet: (index, className) => {
             return `<span class="${className}">${index + 1}</span>`;
@@ -421,11 +420,11 @@
         preventClicksPropagation: true,
         allowTouchMove: false,
         navigation: {
-          nextEl: container.querySelector(".swiper-button-next"),
-          prevEl: container.querySelector(".swiper-button-prev"),
+          nextEl: container.querySelector(".js-slider-gameplay__arrow.swiper-button-next"),
+          prevEl: container.querySelector(".js-slider-gameplay__arrow.swiper-button-prev"),
         },
         pagination: {
-          el: container.querySelector(".swiper-pagination"),
+          el: container.querySelector(".js-slider-gameplay__pagination"),
           clickable: true,
         },
       });

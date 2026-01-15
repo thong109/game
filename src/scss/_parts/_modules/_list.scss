@@ -105,3 +105,51 @@
     }
   }
 }
+
+.c-list-skills {
+  display: flex;
+  flex-direction: column;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 600;
+
+  .c-list-skills__item {
+    display: flex;
+  }
+
+  .c-list-skills__item-icon {
+    flex: 0 0 auto;
+    position: relative;
+  }
+
+  .c-list-skills__item-title {
+    margin: 0;
+    display: block;
+    position: relative;
+    color: #efa009;
+  }
+
+  .c-list-skills__item-description {
+    p {
+      margin: 0;
+    }
+  }
+
+  @include desktop {
+    padding: 0 calc((100% - 3.46rem) / 2);
+
+    .c-list-skills__item-icon {
+      width: 1.03rem;
+    }
+
+    .c-list-skills__item-title {
+      margin-bottom: 0.07rem;
+      font-size: 0.3rem;
+      line-height: calc(38 / 30);
+    }
+
+    .c-list-skills__item-description {
+      font-size: 0.2rem;
+      line-height: calc(25 / 20);
+    }
+  }
+}

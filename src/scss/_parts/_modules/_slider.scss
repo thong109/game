@@ -12,12 +12,15 @@
 
   .c-slide-character__thumbnail {
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
     position: relative;
   }
 
   .c-slide-character__thumbnail-wrapper {
     padding-top: calc(600 / 400 * 100%);
     position: relative;
+    flex: 0 0 auto;
 
     .u-object {
       position: absolute;
@@ -41,10 +44,15 @@
     }
 
     .c-slide-character__thumbnail {
+      margin: 0.6rem 0 0.29rem;
+    }
+
+    .c-slide-character__thumbnail-wrapper {
       width: 4rem;
     }
 
     .c-slide-character__title {
+      margin-bottom: 0.08rem;
       font-size: 0.63rem;
       line-height: calc(79 / 63);
     }
@@ -57,5 +65,21 @@
     .c-card-character.is-standalone {
       order: 3;
     }
+  }
+}
+
+.c-slider-skills {
+  .c-slider-skills__pagination {
+    height: auto;
+    margin: 0;
+    bottom: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+
+  @include desktop {
+    .c-slider-skills__viewport {}
   }
 }

@@ -497,10 +497,6 @@
   }
 
   @include desktop {
-    .p-slider-top-gameplay__viewport {
-      padding-bottom: 0.53rem;
-    }
-
     .p-slider-top-gameplay__slide {
       width: 3.25rem;
       height: 4.87rem;
@@ -534,10 +530,6 @@
   }
 
   @include mobile {
-    .p-slider-top-gameplay__viewport {
-      padding-bottom: 0.12rem;
-    }
-
     .p-slider-top-gameplay__slide {
       width: 0.88rem;
       height: 1.71rem;

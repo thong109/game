@@ -84,7 +84,7 @@
       min-height: 4.54rem;
 
       .c-card-character__content-detail {
-        padding-bottom: calc(58 / 350 * 100%);
+        padding-bottom: calc(58 / 420 * 100%);
       }
     }
 
@@ -96,17 +96,23 @@
       }
     }
 
+    .c-card-character__wrapper.is-skills {
+      min-height: 7.21rem;
+    }
+
     .c-card-character__inner {
-      padding: 0.21rem calc((100% - 3.5rem) / 2) 0.48rem;
+      padding: 0.21rem 0.05rem 0.48rem;
     }
 
     .c-card-character__label {
       margin-bottom: 0.23rem;
+      padding: 0 calc((100% - 3.5rem) / 2);
       font-size: 0.32rem;
       line-height: calc(40 / 32);
     }
 
     .c-card-character__content-detail {
+      padding: 0 calc((100% - 3.5rem) / 2);
       font-size: 0.2rem;
       line-height: calc(25 / 20);
     }

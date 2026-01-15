@@ -1075,7 +1075,7 @@ html.is-page-top .l-footer-common::before {
     min-height: 4.54rem;
   }
   .c-card-character .c-card-character__wrapper.is-overview .c-card-character__content-detail {
-    padding-bottom: 16.5714285714%;
+    padding-bottom: 13.8095238095%;
   }
   .c-card-character .c-card-character__wrapper.is-style {
     min-height: 2.27rem;
@@ -1083,15 +1083,20 @@ html.is-page-top .l-footer-common::before {
   .c-card-character .c-card-character__wrapper.is-style .c-card-character__content {
     justify-content: flex-start;
   }
+  .c-card-character .c-card-character__wrapper.is-skills {
+    min-height: 7.21rem;
+  }
   .c-card-character .c-card-character__inner {
-    padding: 0.21rem calc((100% - 3.5rem) / 2) 0.48rem;
+    padding: 0.21rem 0.05rem 0.48rem;
   }
   .c-card-character .c-card-character__label {
     margin-bottom: 0.23rem;
+    padding: 0 calc((100% - 3.5rem) / 2);
     font-size: 0.32rem;
     line-height: 1.25;
   }
   .c-card-character .c-card-character__content-detail {
+    padding: 0 calc((100% - 3.5rem) / 2);
     font-size: 0.2rem;
     line-height: 1.25;
   }
@@ -1365,6 +1370,46 @@ html.is-page-top .l-footer-common::before {
   }
 }
 
+.c-list-skills {
+  display: flex;
+  flex-direction: column;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 600;
+}
+.c-list-skills .c-list-skills__item {
+  display: flex;
+}
+.c-list-skills .c-list-skills__item-icon {
+  flex: 0 0 auto;
+  position: relative;
+}
+.c-list-skills .c-list-skills__item-title {
+  margin: 0;
+  display: block;
+  position: relative;
+  color: #efa009;
+}
+.c-list-skills .c-list-skills__item-description p {
+  margin: 0;
+}
+@media print, (min-width: 768px) {
+  .c-list-skills {
+    padding: 0 calc((100% - 3.46rem) / 2);
+  }
+  .c-list-skills .c-list-skills__item-icon {
+    width: 1.03rem;
+  }
+  .c-list-skills .c-list-skills__item-title {
+    margin-bottom: 0.07rem;
+    font-size: 0.3rem;
+    line-height: 1.2666666667;
+  }
+  .c-list-skills .c-list-skills__item-description {
+    font-size: 0.2rem;
+    line-height: 1.25;
+  }
+}
+
 .c-pagination {
   display: flex;
   justify-content: center;
@@ -1513,6 +1558,8 @@ html.is-page-top .l-footer-common::before {
   padding: 0;
   display: flex;
   justify-content: center;
+  position: relative !important;
+  inset: 0 !important;
 }
 .c-pagination-sliding .swiper-pagination-bullet {
   margin: 0;
@@ -1529,6 +1576,7 @@ html.is-page-top .l-footer-common::before {
 }
 @media print, (min-width: 768px) {
   .c-pagination-sliding {
+    margin-top: 0.42rem;
     gap: 0.15rem;
   }
   .c-pagination-sliding .swiper-pagination-bullet {
@@ -1538,6 +1586,7 @@ html.is-page-top .l-footer-common::before {
 }
 @media only screen and (max-width: 767.98px) {
   .c-pagination-sliding {
+    margin-top: 0.09rem;
     gap: 0.04rem;
   }
   .c-pagination-sliding .swiper-pagination-bullet {
@@ -1910,11 +1959,14 @@ html.is-page-top .l-footer-common::before {
 }
 .c-slide-character .c-slide-character__thumbnail {
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
   position: relative;
 }
 .c-slide-character .c-slide-character__thumbnail-wrapper {
   padding-top: 150%;
   position: relative;
+  flex: 0 0 auto;
 }
 .c-slide-character .c-slide-character__thumbnail-wrapper .u-object {
   position: absolute;
@@ -1935,9 +1987,13 @@ html.is-page-top .l-footer-common::before {
     order: 2;
   }
   .c-slide-character .c-slide-character__thumbnail {
+    margin: 0.6rem 0 0.29rem;
+  }
+  .c-slide-character .c-slide-character__thumbnail-wrapper {
     width: 4rem;
   }
   .c-slide-character .c-slide-character__title {
+    margin-bottom: 0.08rem;
     font-size: 0.63rem;
     line-height: 1.253968254;
   }
@@ -1950,6 +2006,15 @@ html.is-page-top .l-footer-common::before {
   }
 }
 
+.c-slider-skills .c-slider-skills__pagination {
+  height: auto;
+  margin: 0;
+  bottom: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
 .c-tab-news {
   display: grid;
   flex-wrap: wrap;
@@ -2562,9 +2627,6 @@ html.is-page-top .l-footer-common::before {
   transform: scale(-1, 1);
 }
 @media print, (min-width: 768px) {
-  .p-slider-top-gameplay .p-slider-top-gameplay__viewport {
-    padding-bottom: 0.53rem;
-  }
   .p-slider-top-gameplay .p-slider-top-gameplay__slide {
     width: 3.25rem;
     height: 4.87rem;
@@ -2592,9 +2654,6 @@ html.is-page-top .l-footer-common::before {
   }
 }
 @media only screen and (max-width: 767.98px) {
-  .p-slider-top-gameplay .p-slider-top-gameplay__viewport {
-    padding-bottom: 0.12rem;
-  }
   .p-slider-top-gameplay .p-slider-top-gameplay__slide {
     width: 0.88rem;
     height: 1.71rem;
