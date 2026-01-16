@@ -1,6 +1,64 @@
 @charset "utf-8";
 @use "../../_base/base" as *;
 
+.c-slider-character {
+  .c-slider-character__arrow {
+    margin: 0;
+    background-color: #ffd363;
+    transform: none;
+    mask: url(../resources/images/common/icon_arrow_03.svg) 50% 50% / 100% auto no-repeat;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .c-slider-character__arrow.swiper-button-prev {
+    transform: scale(-1, 1);
+  }
+
+  .c-slider-character__arrow {
+    transition: opacity 0.5s ease;
+  }
+
+  .c-slide-character__arrow.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  @include desktop {
+    .c-slider-character__arrow {
+      width: 0.96rem;
+      height: 0.96rem;
+      top: calc((50% - 0.96rem / 2) - (0.53rem / 2));
+    }
+
+    .c-slider-character__arrow.swiper-button-prev {
+      left: calc(50% - 7.2rem);
+    }
+
+    .c-slider-character__arrow.swiper-button-next {
+      right: calc(50% - 7.2rem);
+    }
+  }
+
+  @include mobile {
+    .c-slider-character__arrow {
+      width: 0.37rem;
+      height: 0.37rem;
+      top: calc((50% - 0.37rem / 2) - (0.12rem / 2));
+    }
+
+    .c-slider-character__arrow.swiper-button-prev {
+      left: 0;
+    }
+
+    .c-slider-character__arrow.swiper-button-next {
+      right: 0;
+    }
+  }
+}
+
 .c-slide-character {
   position: relative;
   color: #fff;
@@ -184,6 +242,64 @@
         &::before,
         &::after {
           border-color: #fa9eff;
+          background-color: rgba(#3d2208, 0.27);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .c-card-character {
+      --border-color: #fa9eff;
+      background-color: rgba(#3d2208, 0.27);
+
+      &::before,
+      &::after {
+        border-color: #fa9eff;
+        background-color: rgba(#3d2208, 0.27);
+      }
+    }
+  }
+}
+
+.c-slide-character.is-cell {
+  &::before {
+    background-color: #18e7f6;
+  }
+
+  .c-slide-character__title {
+    color: #9effe8;
+  }
+
+  .c-card-character {
+    .c-card-character__label {
+      color: #9effe8;
+    }
+  }
+
+  .c-list-skills {
+    .c-list-skills__item-title {
+      color: #9effe8;
+    }
+  }
+
+  .c-slider-skills {
+    .c-slider-skills__pagination {
+      .swiper-pagination-bullet {
+        background-color: #9effe8;
+      }
+    }
+  }
+
+  @include desktop {
+    .c-card-character {
+      .c-card-character__wrapper {
+        --border-color: #9effe8;
+        background-color: rgba(#3d2208, 0.27);
+
+        &::before,
+        &::after {
+          border-color: #9effe8;
           background-color: rgba(#3d2208, 0.27);
         }
       }

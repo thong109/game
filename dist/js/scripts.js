@@ -346,7 +346,7 @@
       const slider = container.querySelectorAll(".swiper")[0];
 
       new Swiper(slider, {
-        loop: true,
+        loop: false,
         speed: 500,
         slidesPerView: 1,
         spaceBetween: 0,
@@ -378,6 +378,7 @@
         speed: 500,
         slidesPerView: 1,
         spaceBetween: 0,
+        nested: true,
         navigation: {
           nextEl: container.querySelector(".js-slider-numbered__arrow.swiper-button-next"),
           prevEl: container.querySelector(".js-slider-numbered__arrow.swiper-button-prev"),
