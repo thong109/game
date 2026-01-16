@@ -35,3 +35,25 @@
     }
   }
 }
+
+.c-icon-helper {
+  width: 0.13rem;
+  height: 0.13rem;
+  border: 0.01rem solid #efa009;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 500;
+  font-size: 0.1rem;
+  line-height: calc(10 / 10);
+  color: #fff;
+  flex: 0 0 auto;
+
+  .c-icon-helper__wrapper {
+    position: relative;
+    top: 0.01rem;
+  }
+}

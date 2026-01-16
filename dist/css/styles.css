@@ -1345,6 +1345,27 @@ html.is-page-top .l-footer-common::before {
   }
 }
 
+.c-icon-helper {
+  width: 0.13rem;
+  height: 0.13rem;
+  border: 0.01rem solid #efa009;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 500;
+  font-size: 0.1rem;
+  line-height: 1;
+  color: #fff;
+  flex: 0 0 auto;
+}
+.c-icon-helper .c-icon-helper__wrapper {
+  position: relative;
+  top: 0.01rem;
+}
+
 .c-list-news {
   margin: 0;
   padding: 0;
@@ -2251,8 +2272,8 @@ html.is-page-top .l-footer-common::before {
 }
 @media only screen and (max-width: 767.98px) {
   .c-slide-character::before {
-    -webkit-mask: url(../resources/images/common/mask_character_01.svg) calc(50% - 1.09rem) calc(50% + 0.13rem)/9.36rem auto no-repeat;
-            mask: url(../resources/images/common/mask_character_01.svg) calc(50% - 1.09rem) calc(50% + 0.13rem)/9.36rem auto no-repeat;
+    -webkit-mask: url(../resources/images/common/sp/mask_character_01.svg) 50% calc(50% - 0.22rem)/100% auto no-repeat;
+            mask: url(../resources/images/common/sp/mask_character_01.svg) 50% calc(50% - 0.22rem)/100% auto no-repeat;
   }
   .c-slide-character .c-slide-character__viewport {
     padding: 0.24rem 0.29rem 0;
@@ -2281,9 +2302,19 @@ html.is-page-top .l-footer-common::before {
     order: 1;
   }
   .c-slide-character .c-slide-character__toggle {
+    display: flex;
+    align-items: center;
     position: absolute;
+    gap: 0.05rem;
     top: 0.1rem;
     right: 0.07rem;
+    font-size: 0.1rem;
+    line-height: 1.3;
+    cursor: pointer;
+  }
+  .c-slide-character .c-slide-character__toggle-wrapper {
+    top: 0.01rem;
+    position: relative;
   }
 }
 

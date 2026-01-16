@@ -148,7 +148,7 @@
 
   @include mobile {
     &::before {
-      mask: url(../resources/images/common/mask_character_01.svg) calc(50% - 1.09rem) calc(50% + 0.13rem) / 9.36rem auto no-repeat;
+      mask: url(../resources/images/common/sp/mask_character_01.svg) 50% calc(50% - 0.22rem) / 100% auto no-repeat;
     }
 
     .c-slide-character__viewport {
@@ -185,9 +185,20 @@
     }
 
     .c-slide-character__toggle {
+      display: flex;
+      align-items: center;
       position: absolute;
+      gap: 0.05rem;
       top: 0.1rem;
       right: 0.07rem;
+      font-size: 0.1rem;
+      line-height: calc(13 / 10);
+      cursor: pointer;
+    }
+
+    .c-slide-character__toggle-wrapper {
+      top: 0.01rem;
+      position: relative;
     }
   }
 }
