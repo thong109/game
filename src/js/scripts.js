@@ -162,26 +162,33 @@
       const tabId = toggleIds[1];
 
       toggle.addEventListener("click", () => {
+        const wasActive = toggle.classList.contains(classTabActive);
+
         toggles.forEach((t) => {
           const ids = parseIds(t);
           if (ids.includes(groupId)) {
             t.classList.remove(classTabActive);
           }
         });
+
         targets.forEach((target) => {
           const ids = parseIds(target);
           if (ids.includes(groupId)) {
             target.classList.remove(classTabActive);
           }
         });
-        toggle.classList.add(classTabActive);
-        targets.forEach((target) => {
-          const ids = parseIds(target);
-          if (ids.includes(groupId) && ids.includes(tabId)) {
-            target.classList.add(classTabActive);
-          }
-        });
+
+        if (!wasActive) {
+          toggle.classList.add(classTabActive);
+          targets.forEach((target) => {
+            const ids = parseIds(target);
+            if (ids.includes(groupId) && ids.includes(tabId)) {
+              target.classList.add(classTabActive);
+            }
+          });
+        }
       });
+
     });
   };
 
@@ -352,11 +359,15 @@
         spaceBetween: 0,
         effect: "fade",
         fadeEffect: {
-          crossFade: true
+          crossFade: true,
         },
         navigation: {
-          nextEl: container.querySelector(".js-slider-simple__arrow.swiper-button-next"),
-          prevEl: container.querySelector(".js-slider-simple__arrow.swiper-button-prev"),
+          nextEl: container.querySelector(
+            ".js-slider-simple__arrow.swiper-button-next"
+          ),
+          prevEl: container.querySelector(
+            ".js-slider-simple__arrow.swiper-button-prev"
+          ),
         },
         pagination: {
           el: container.querySelector(".js-slider-simple__pagination"),
@@ -380,8 +391,12 @@
         spaceBetween: 0,
         nested: true,
         navigation: {
-          nextEl: container.querySelector(".js-slider-numbered__arrow.swiper-button-next"),
-          prevEl: container.querySelector(".js-slider-numbered__arrow.swiper-button-prev"),
+          nextEl: container.querySelector(
+            ".js-slider-numbered__arrow.swiper-button-next"
+          ),
+          prevEl: container.querySelector(
+            ".js-slider-numbered__arrow.swiper-button-prev"
+          ),
         },
         pagination: {
           el: container.querySelector(".js-slider-numbered__pagination"),
@@ -418,8 +433,12 @@
         spaceBetween: 0,
         watchOverflow: true,
         navigation: {
-          nextEl: container.querySelector(".js-slider-gameplay__arrow.swiper-button-next"),
-          prevEl: container.querySelector(".js-slider-gameplay__arrow.swiper-button-prev"),
+          nextEl: container.querySelector(
+            ".js-slider-gameplay__arrow.swiper-button-next"
+          ),
+          prevEl: container.querySelector(
+            ".js-slider-gameplay__arrow.swiper-button-prev"
+          ),
         },
         pagination: {
           el: container.querySelector(".js-slider-gameplay__pagination"),
