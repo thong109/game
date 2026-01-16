@@ -172,8 +172,8 @@
   inset: 0 !important;
 
   .swiper-pagination-bullet {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     flex: 0 0 auto;
     border-radius: 0;
     background-color: #9f9f9f;

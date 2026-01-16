@@ -1029,7 +1029,6 @@ html.is-page-top .l-footer-common::before {
   text-align: center;
 }
 .c-card-character .c-card-character__content {
-  justify-content: center;
   flex: 1 1 auto;
 }
 .c-card-character .c-card-character__content-detail p {
@@ -1093,8 +1092,59 @@ html.is-page-top .l-footer-common::before {
     font-size: 0.32rem;
     line-height: 1.25;
   }
+  .c-card-character .c-card-character__content {
+    justify-content: center;
+  }
   .c-card-character .c-card-character__content-detail {
     padding: 0 calc((100% - 3.5rem) / 2);
+    font-size: 0.2rem;
+    line-height: 1.25;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .c-card-character {
+    --cut-size: 0.2rem 0 0.2rem 0;
+    --border-width: 0.02rem;
+    --border-type: inner;
+    --border-color: #fff;
+    width: 1.82rem;
+    min-height: 2.05rem;
+    background-color: rgba(255, 255, 255, 0.27);
+    clip-path: polygon(0.2rem 0, 100% 0, 100% calc(100% - 0.2rem), calc(100% - 0.2rem) 100%, 0 100%, 0 0.2rem);
+  }
+  .c-card-character::before, .c-card-character::after {
+    content: "";
+    width: 0.45rem;
+    height: 0.35rem;
+    border-width: 0.02rem 0.02rem 0 0;
+    border-style: solid;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.27);
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+  .c-card-character::before {
+    top: 0.06rem;
+    right: 0.06rem;
+  }
+  .c-card-character::after {
+    bottom: 0.06rem;
+    left: 0.06rem;
+    transform: scale(-1, -1);
+  }
+  .c-card-character .c-card-character__wrapper .c-canvas {
+    display: none;
+  }
+  .c-card-character .c-card-character__inner {
+    padding: 0.09rem 0.02rem 0.15rem;
+  }
+  .c-card-character .c-card-character__label {
+    margin-bottom: 0.04rem;
+    padding: 0 0.1rem;
+    font-size: 0.18rem;
+    line-height: 1.2777777778;
+  }
+  .c-card-character .c-card-character__content-detail {
+    padding: 0 0.1rem;
     font-size: 0.2rem;
     line-height: 1.25;
   }
@@ -1463,6 +1513,8 @@ html.is-page-top .l-footer-common::before {
     min-height: 0.31rem;
     margin: -0.17rem 0 -0.14rem;
     border: 0.02rem solid #ffd363;
+    font-size: 0.2rem;
+    line-height: 1;
   }
   .c-list-skills .c-list-skills__caption-wrapper {
     top: 0.01rem;
@@ -1474,6 +1526,42 @@ html.is-page-top .l-footer-common::before {
   }
   .c-list-skills .c-list-skills__item-description {
     font-size: 0.2rem;
+    line-height: 1.25;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .c-list-skills {
+    padding: 0 0.1rem;
+    gap: 0.07rem;
+  }
+  .c-list-skills .c-list-skills__item {
+    gap: 0.03rem;
+  }
+  .c-list-skills .c-list-skills__item-icon {
+    width: 0.33rem;
+  }
+  .c-list-skills .c-list-skills__icon-wrapper::after {
+    -webkit-mask-size: 100% 100%, calc(100% - 0.04rem) calc(100% - 0.04rem);
+            mask-size: 100% 100%, calc(100% - 0.04rem) calc(100% - 0.04rem);
+  }
+  .c-list-skills .c-list-skills__icon-caption {
+    min-width: 0.1rem;
+    min-height: 0.1rem;
+    margin: -0.05rem 0 -0.05rem;
+    border: 0.01rem solid #ffd363;
+    font-size: 0.08rem;
+    line-height: 1;
+  }
+  .c-list-skills .c-list-skills__caption-wrapper {
+    top: 0.01rem;
+  }
+  .c-list-skills .c-list-skills__item-title {
+    margin-bottom: -0.01rem;
+    font-size: 0.12rem;
+    line-height: 1.25;
+  }
+  .c-list-skills .c-list-skills__item-description {
+    font-size: 0.08rem;
     line-height: 1.25;
   }
 }
@@ -1630,8 +1718,8 @@ html.is-page-top .l-footer-common::before {
   inset: 0 !important;
 }
 .c-pagination-sliding .swiper-pagination-bullet {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   flex: 0 0 auto;
   border-radius: 0;
   background-color: #9f9f9f;
@@ -2080,6 +2168,7 @@ html.is-page-top .l-footer-common::before {
 }
 .c-slide-character .c-slide-character__viewport {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   position: relative;
   z-index: 1;
@@ -2120,13 +2209,13 @@ html.is-page-top .l-footer-common::before {
     order: 2;
   }
   .c-slide-character .c-slide-character__thumbnail {
-    margin: 0.6rem 0 0.29rem;
+    margin-top: 0.6rem;
   }
   .c-slide-character .c-slide-character__thumbnail-wrapper {
     width: 4rem;
   }
   .c-slide-character .c-slide-character__title {
-    margin-bottom: 0.08rem;
+    margin: -0.32rem 0 0.08rem;
     font-size: 0.63rem;
     line-height: 1.253968254;
   }
@@ -2136,6 +2225,37 @@ html.is-page-top .l-footer-common::before {
   }
   .c-slide-character .c-card-character.is-standalone {
     order: 3;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .c-slide-character::before {
+    -webkit-mask: url(../resources/images/common/mask_character_01.svg) calc(50% - 1.09rem) calc(50% + 0.13rem)/9.36rem auto no-repeat;
+            mask: url(../resources/images/common/mask_character_01.svg) calc(50% - 1.09rem) calc(50% + 0.13rem)/9.36rem auto no-repeat;
+  }
+  .c-slide-character .c-slide-character__viewport {
+    padding: 0.24rem 0.29rem 0;
+  }
+  .c-slide-character .c-slide-character__wrapper {
+    order: 2;
+  }
+  .c-slide-character .c-slide-character__thumbnail {
+    margin: -0.01rem -0.05rem;
+  }
+  .c-slide-character .c-slide-character__thumbnail-wrapper {
+    width: 1.55rem;
+  }
+  .c-slide-character .c-slide-character__title {
+    margin: -0.08rem 0 0.03rem;
+    font-size: 0.18rem;
+    line-height: 1.2777777778;
+  }
+  .c-slide-character .c-card-character.is-standalone {
+    order: 1;
+  }
+  .c-slide-character .c-slide-character__toggle {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.07rem;
   }
 }
 
@@ -2284,6 +2404,20 @@ html.is-page-top .l-footer-common::before {
     min-height: 0.4rem;
     padding: 0.05rem;
     border-radius: 0.15rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .c-slider-skills .c-slider-skills__pagination {
+    margin-top: 0.04rem;
+    gap: 0.06rem;
+    font-size: 0.072rem;
+    font-weight: 1.25;
+  }
+  .c-slider-skills .c-slider-skills__pagination .swiper-pagination-bullet {
+    min-width: 0.14rem;
+    min-height: 0.14rem;
+    padding: 0.02rem;
+    border-radius: 0.054rem;
   }
 }
 
@@ -2993,6 +3127,7 @@ html.is-page-top .l-footer-common::before {
   .p-section-top-about {
     margin-bottom: 0.04rem;
     padding: 0.04rem 0 0.22rem;
+    background: url(../resources/images/common/sp/background_character_01.jpg) 50% 50%/cover no-repeat;
   }
 }
 

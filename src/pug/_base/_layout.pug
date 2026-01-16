@@ -28,7 +28,7 @@ mixin cardCommonCharacter(data)
                 p!=item.detail
 
 mixin slideCommonCharacter(data)
-  .c-slide-character.js-border-polygon.swiper-slide&attributes(attributes)
+  .c-slide-character.swiper-slide&attributes(attributes)
     .c-slide-character__viewport
       .c-slide-character__toggle.u-display-sp.js-tab__toggle(data-tab-id="slide-character-"+data.id)
         span.c-icon-helper
@@ -37,7 +37,7 @@ mixin slideCommonCharacter(data)
       .c-frame-tabbing.js-tab__target(data-tab-id="slide-character-"+data.id)
         .c-frame-tabbing__wrapper
           +cardCommonCharacter(data.cardCharacter)
-      .c-card-character.is-standalone
+      .c-card-character.is-standalone.js-border-polygon
         ul.c-card-character__viewport
           li.c-card-character__wrapper.is-skills.js-border-polygon
             .c-card-character__inner
@@ -54,7 +54,7 @@ mixin slideCommonCharacter(data)
         .c-slide-character__thumbnail
           figure.c-slide-character__thumbnail-wrapper
             img.u-object(src=data.thumbnail.src alt=data.thumbnail.alt)
-        span.c-slide-character__title!=data.title
+    span.c-slide-character__title!=data.title
 
 mixin filtersCommonNews(data)
   .c-filters-news&attributes(attributes)

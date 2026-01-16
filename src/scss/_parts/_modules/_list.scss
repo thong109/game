@@ -214,6 +214,8 @@
       min-height: 0.31rem;
       margin: -0.17rem 0 -0.14rem;
       border: 0.02rem solid #ffd363;
+      font-size: 0.2rem;
+      line-height: calc(20 / 20);
     }
 
     .c-list-skills__caption-wrapper {
@@ -229,6 +231,49 @@
     .c-list-skills__item-description {
       font-size: 0.2rem;
       line-height: calc(25 / 20);
+    }
+  }
+
+  @include mobile {
+    padding: 0 0.1rem;
+    gap: 0.07rem;
+
+    .c-list-skills__item {
+      gap: 0.03rem;
+    }
+
+    .c-list-skills__item-icon {
+      width: 0.33rem;
+    }
+
+    .c-list-skills__icon-wrapper {
+      &::after {
+        mask-size: 100% 100%, calc(100% - 0.04rem) calc(100% - 0.04rem);
+      }
+    }
+
+    .c-list-skills__icon-caption {
+      min-width: 0.1rem;
+      min-height: 0.1rem;
+      margin: -0.05rem 0 -0.05rem;
+      border: 0.01rem solid #ffd363;
+      font-size: 0.08rem;
+      line-height: calc(8 / 8);
+    }
+
+    .c-list-skills__caption-wrapper {
+      top: 0.01rem;
+    }
+
+    .c-list-skills__item-title {
+      margin-bottom: -0.01rem;
+      font-size: 0.12rem;
+      line-height: calc(15 / 12);
+    }
+
+    .c-list-skills__item-description {
+      font-size: 0.08rem;
+      line-height: calc(10 / 8);
     }
   }
 }
