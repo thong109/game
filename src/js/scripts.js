@@ -228,7 +228,10 @@
 
       if (value.endsWith("%")) {
         const percent = parseFloat(value) / 100;
-        const { width, height } = target.getBoundingClientRect();
+        const {
+          width,
+          height
+        } = target.getBoundingClientRect();
         return axis === "y" ? percent * height : percent * width;
       }
 
@@ -292,7 +295,10 @@
       }
 
       const ctx = canvas.getContext("2d");
-      const { width, height } = target.getBoundingClientRect();
+      const {
+        width,
+        height
+      } = target.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
 
       canvas.width = width * dpr;
@@ -353,7 +359,7 @@
       const slider = container.querySelectorAll(".swiper")[0];
 
       new Swiper(slider, {
-        loop: false,
+        loop: true,
         speed: 500,
         slidesPerView: 1,
         spaceBetween: 0,
@@ -425,7 +431,7 @@
         }
       }
 
-      new Swiper(slider, {
+      const swiper = new Swiper(slider, {
         loop: true,
         speed: 500,
         slidesPerView: "auto",
@@ -445,7 +451,65 @@
           clickable: true,
         },
       });
+
+      initVideoPopupSwiper(swiper);
     });
+  };
+
+  const initVideoPopupSwiper = (swiper) => {
+    const popup = document.getElementById("videoPopup");
+    const wrapper = document.getElementById("videoWrapper");
+
+    if (!popup || !wrapper) return;
+
+    const lockScroll = () => {
+      const scrollY = window.scrollY;
+      document.body.dataset.scrollY = scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    };
+
+    const unlockScroll = () => {
+      const scrollY = document.body.dataset.scrollY || 0;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, parseInt(scrollY));
+      delete document.body.dataset.scrollY;
+    };
+
+    document.querySelectorAll(".p-slider-top-gameplay__slide-wrapper").forEach(thumb => {
+      thumb.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const videoId = thumb.dataset.videoId;
+
+        wrapper.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      `;
+
+        popup.classList.add("active");
+        swiper.allowTouchMove = false;
+        lockScroll();
+      });
+    });
+
+    const closeVideo = () => {
+      popup.classList.remove("active");
+      wrapper.innerHTML = "";
+      swiper.allowTouchMove = true;
+      unlockScroll();
+    };
+
+    document.querySelector(".close-video")?.addEventListener("click", closeVideo);
+    document.querySelector(".video-popup-overlay")?.addEventListener("click", closeVideo);
   };
 
   window.WebFontConfig = {

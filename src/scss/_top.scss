@@ -1,5 +1,5 @@
 @charset "utf-8";
-@use "_base/base" as *;
+@use "_base/base"as *;
 
 @keyframes floatTopVisual {
   0% {
@@ -661,6 +661,56 @@
 
     .c-title-primary {
       margin-bottom: .14rem;
+    }
+  }
+}
+
+.video-popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 99999;
+
+  &.active {
+    display: flex;
+    align-items: center;
+  }
+
+  .video-popup-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .video-popup-content {
+    position: relative;
+    max-width: 100%;
+    background: #000;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include desktop {
+    .video-popup-content {
+      width: 70%;
+      margin: 5% auto;
+    }
+  }
+
+  @include mobile {
+    .video-popup-content {
+      width: 90%;
+      margin: 0 auto;
     }
   }
 }
